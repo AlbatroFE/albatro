@@ -1,0 +1,47 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+#     - name: Run a one-line script
+#       run: echo Hello, world!
+#     - name: Run a multi-line script
+#       run: |
+#         echo Add other actions to build,
+#         echo test, and deploy your project.
+
+    - name: "npm ci"
+      run: npm ci
+
+    - name: "npm run build"
+      run: npm run build
+
+    - name: "npm run test"
+      run: npm run test
+
+    - name: "check for uncommitted changes"
+      # Ensure no changes, but ignore node_modules dir since dev/fresh ci deps installed.
+      run: |
+        git diff --exit-code --stat -- . ':!node_modules' \
+        || (echo "##[error] found changed files after build. please 'npm run build && npm run format'" \
+                 "and check in all changes" \
+            && exit 1)
+            
+    - name: Send dingding notify for build
+      uses: GavinHome/action-dingding@v1.0
+      with:
+        token: ${{ secrets.DING_TOKEN }}
+        body: |
+          {
+            "msgtype": "markdown",
+            "markdown": {
+                "title": "AlbatroUI",
+                "text": "#### AlbatroUI Build \n #### Version：${{ github.sha }} \n #### Result：${{ job.status }}\n\n > ![screenshot](https://gw.alicdn.com/tfs/TB1ut3xxbsrBKNjSZFpXXcXhFXa-846-786.png)\n > ###### Please check the [details](https://github.com/GavinHome/Albatro-UI/actions) \n"
+            }
+          }
