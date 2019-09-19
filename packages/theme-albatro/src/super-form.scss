@@ -1,0 +1,47 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@include b(super-form) {
+  & .al-super-form-groups, .al-super-form-single{
+    border: $--border-base//1px solid #dcdfe6;
+  }
+
+  & .al-super-form-command {
+    margin: 15px 0px;
+     
+    .al-super-form-command__append {
+      text-align: right;
+    }
+  }
+
+  & .el-collapse-item__content {
+    padding: $--super-form-collapse-item-content-padding;
+  }
+
+  & .el-collapse-item__header {
+    font-size: $--super-form-collapse-item-header-font-size;
+    border-bottom-color: $--super-form-collapse-item-header-border-bottom-color;
+    //margin: $--super-form-collapse-item-header-margin;
+    padding: $--super-form-collapse-item-header-padding;
+    color: $--super-form-color;
+    font-weight: $--super-form-font-weight;
+  }
+
+  & label {
+    font-weight: $--super-form-label-font-weight
+  }
+
+  & .el-form--label-top .el-form-item__label {
+    padding-bottom: 0!important;
+    margin-bottom: 0;
+  }
+
+  & .k-toolbar {
+    padding: 0px;
+    min-height: 0px;
+  }
+
+  & .el-input-number, .el-select {
+    width: 100%
+  }
+}

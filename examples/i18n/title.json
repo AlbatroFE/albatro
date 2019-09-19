@@ -1,0 +1,14 @@
+{
+  "zh-CN": {
+    "home": "Albatro - 网站快速成型工具",
+    "guide": "指南 | Albatro",
+    "component": "组件 | Albatro",
+    "resource": "资源 | Albatro"
+  },
+  "en-US": {
+    "home": "Albatro - A Desktop UI Toolkit for Web",
+    "guide": "Guide | Albatro",
+    "component": "Component | Albatro",
+    "resource": "Resource | Albatro"
+  }
+}

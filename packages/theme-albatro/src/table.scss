@@ -1,0 +1,20 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@include b(table) {
+    & table tr th {
+        padding: 5px 0;
+    }
+   
+    & .al-table-pagination {
+        border-bottom: 1px solid #ebeef5;
+        border-left: 1px solid #ebeef5;
+        border-right: 1px solid #ebeef5;
+        padding: 5px 0;
+    }
+
+    & .k-toolbar.k-grid-toolbar.k-grid-top {
+        background: none;
+        padding: 5px 10px;
+    }
+}

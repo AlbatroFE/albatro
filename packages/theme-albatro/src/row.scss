@@ -1,0 +1,36 @@
+@import "common/var";
+@import "mixins/mixins";
+@import "mixins/utils";
+
+@include b(row) {
+  position: relative;
+  box-sizing: border-box;
+  @include utils-clearfix;
+
+  @include m(flex) {
+    display: flex;
+    &:before,
+    &:after {
+      display: none;
+    }
+
+    @include when(horizontal-end) {
+      justify-content: flex-end;
+    }
+    @include when(horizontal-center) {
+      justify-content: center;
+    }
+    @include when(horizontal-space-around) {
+      justify-content: space-around;
+    }
+    @include when(horizontal-space-between) {
+      justify-content: space-between;
+    }
+    @include when(vertical-middle) {
+      align-items: center;
+    }
+    @include when(vertical-bottom) {
+      align-items: flex-end;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "albatro-theme",
+  "version": "0.1.0",
+  "description": "Albatro UI component theme.",
+  "main": "lib/index.css",
+  "style": "lib/index.css",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albatrofE/theme-albatro.git"
+  },
+  "keywords": [
+    "albatro",
+    "theme"
+  ],
+  "author": "yangxiaoming512@yeah.net",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/albatrofE/theme-albatro/issues"
+  },
+  "homepage": "https://github.com/albatrofE/theme-albatro#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-sass": "^3.1.0",
+    "gulp-autoprefixer": "^4.0.0"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,204 @@
+{
+  "zh-CN": [
+    {
+      "name": "更新日志",
+      "path": "/changelog"
+    },
+    {
+      "name": "",
+      "href": "/"
+    },
+    {
+      "name": "",
+      "href": "/"
+    },
+    {
+      "name": "开发指南",
+      "children": [
+        {
+          "path": "/installation",
+          "name": "安装"
+        },
+        {
+          "path": "/quickstart",
+          "name": "快速上手"
+        },
+        {
+          "path": "/i18n",
+          "name": "国际化"
+        }
+      ]
+    },
+    {
+      "name": "组件",
+      "groups": [
+        {
+          "groupName": "Basic",
+          "list": [
+            {
+              "path": "/layout",
+              "title": "Layout 布局"
+            },
+            {
+              "path": "/container",
+              "title": "Container 布局容器"
+            },
+            {
+              "path": "/icon",
+              "title": "Icon 图标"
+            },
+            {
+              "path": "/button",
+              "title": "Button 按钮"
+            }
+          ]
+        },
+        {
+          "groupName": "Form",
+          "list": [
+            {
+              "path": "/super-form",
+              "title": "SuperForm 超级表单"
+            }
+          ]
+        },
+        {
+          "groupName": "Data",
+          "list": [
+            {
+              "path": "/grid",
+              "title": "Grid 动态列表"
+            },
+            {
+              "path": "/table",
+              "title": "Table 动态表格"
+            }
+          ]
+        },
+        {
+          "groupName": "Others",
+          "list": [
+            {
+              "path": "/dialog",
+              "title": "Dialog 对话框"
+            },
+            {
+              "path": "/collapse",
+              "title": "Collapse 折叠面板"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "en-US": [
+    {
+      "name": "Changelog",
+      "path": "/changelog"
+    },
+    {
+      "name": "Albatro React",
+      "href": "https://albatrofE.github.io/albatro-react/"
+    },
+    {
+      "name": "Albatro Angular",
+      "href": "https://albatrofE.github.io/albatro-angular/"
+    },
+    {
+      "name": "Development",
+      "children": [
+        {
+          "path": "/installation",
+          "name": "Installation"
+        },
+        {
+          "path": "/quickstart",
+          "name": "Quick Start"
+        },
+        {
+          "path": "/i18n",
+          "name": "Internationalization"
+        }
+      ]
+    },
+    {
+      "name": "Components",
+      "groups": [
+        {
+          "groupName": "Basic",
+          "list": [
+            {
+              "path": "/layout",
+              "title": "Layout"
+            },
+            {
+              "path": "/container",
+              "title": "Container"
+            },
+            {
+              "path": "/icon",
+              "title": "Icon"
+            },
+            {
+              "path": "/button",
+              "title": "Button"
+            }
+          ]
+        },
+        {
+          "groupName": "Form",
+          "list": [
+            {
+              "path": "/super-form",
+              "title": "SuperForm"
+            }
+          ]
+        },
+        {
+          "groupName": "Data",
+          "list": [
+            {
+              "path": "/grid",
+              "title": "Grid"
+            },
+            {
+              "path": "/table",
+              "title": "Table"
+            }
+          ]
+        },
+        {
+          "groupName": "Notice",
+          "list": [
+            {
+              "path": "/message",
+              "title": "Message"
+            }
+          ]
+        },
+        {
+          "groupName": "Navigation",
+          "list": [
+            {
+              "path": "/tabs",
+              "title": "Tabs"
+            }
+          ]
+        },
+        {
+          "groupName": "Others",
+          "list": [
+            {
+              "path": "/dialog",
+              "title": "Dialog"
+            },
+            {
+              "path": "/collapse",
+              "title": "Collapse"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

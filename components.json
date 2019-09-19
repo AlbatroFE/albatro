@@ -1,0 +1,17 @@
+{
+  "button": "./packages/button/index.js",
+  "row": "./packages/row/index.js",
+  "col": "./packages/col/index.js",
+  "super-form": "./packages/super-form/index.js",
+  "container": "./packages/container/index.js",
+  "header": "./packages/header/index.js",
+  "aside": "./packages/aside/index.js",
+  "main": "./packages/main/index.js",
+  "footer": "./packages/footer/index.js",
+  "grid": "./packages/grid/index.js",
+  "table": "./packages/table/index.js",
+  "collapse": "./packages/collapse/index.js",
+  "collapse-item": "./packages/collapse-item/index.js",
+  "dialog": "./packages/dialog/index.js",  
+  "message": "./packages/message/index.js"
+}
