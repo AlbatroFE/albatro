@@ -31,14 +31,14 @@ rm -rf $GH_PAGES_FOLDER/img
 rm -rf $GH_PAGES_FOLDER/js
 rm -rf $GH_PAGES_FOLDER/$SUB_FOLDER
 
-cp -rf ./test/temp_web/albatro/** $GH_PAGES_FOLDER/
+cp -rf ./albatro/temp_web/albatro/** $GH_PAGES_FOLDER/
 
 # deploy domestic site
-# rm -rf ./test/temp_web
+rm -rf ./albatro/temp_web
 
 echo "deploy gh-pages $SUB_FOLDER"
 cd $GH_PAGES_FOLDER
 git add .
 git commit -m "deploy gh-pages $SUB_FOLDER"
-git push albatro gh-pages
+git push origin gh-pages
 echo "deploy successful version: $SUB_FOLDER"
