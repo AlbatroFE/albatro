@@ -20,7 +20,7 @@ module.exports = {
     config.output.libraryExport = "default";
 
     if (process.env.NODE_ENV === 'production') {
-      config.externals = [{'vue-router': 'VueRouter'},{ 'vue': 'Vue' },{ 'element-ui': 'ELEMENT'},{'highlight.js': 'hljs'}]
+      config.externals = [{'vue-router': 'VueRouter'},{ 'vue': 'Vue' },{ 'element-ui': 'ELEMENT'},{'highlight.js': 'hljs'},{'jQuery':'jQuery'},{'algoliasearch':'algoliasearch'}]
     }
   },
   chainWebpack: config => {

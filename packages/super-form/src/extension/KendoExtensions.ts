@@ -1,17 +1,19 @@
-import "@progress/kendo-ui"
+//import "@progress/kendo-ui"
 //import StoreCache from "../common/TzStoreCache";
 import TzGridDynamic from "../components/TzGridDynamic.vue";
 import { FieldTypeEnum } from "../schema/GridSchema";
 
-var kendoJQuery = (kendo as any).jQuery
+//var kendoJQuery = (kendo as any).jQuery
+
+//var kendoJQuery = require("jQuery");
 
 var kendoExtensions = {
-    dataItem: function (e: any) {
-        var grid = kendoJQuery(e.delegateTarget).data("kendoGrid")
-        var tr = kendoJQuery(e.currentTarget).closest('tr')
-        var data = grid.dataItem(tr)
-        return data
-    },
+    // dataItem: function (e: any) {
+    //     var grid = kendoJQuery(e.delegateTarget).data("kendoGrid")
+    //     var tr = kendoJQuery(e.currentTarget).closest('tr')
+    //     var data = grid.dataItem(tr)
+    //     return data
+    // },
     onDataBound: function (e: any) {
         e.sender.element.data("kendoGrid").thead.find("[data-field=RowNumber]>.k-header-column-menu").remove();
     },
@@ -22,14 +24,14 @@ var kendoExtensions = {
             ele.RowNumber = (page - 1) * pageSize + i + 1
         });
     },
-    onRowDoubleClick: function (e: any, callback: any) {
-        e.sender.element.data("kendoGrid").element.undelegate("tbody tr[data-uid]", "dblclick");
-        e.sender.element.data("kendoGrid").element.on('dblclick', 'tbody tr[data-uid]', function (ev:any) {
-            if (callback) {
-                callback(e.sender.element.data("kendoGrid").dataItem(kendoJQuery(ev.target).closest('tr')))
-            }
-        })
-    },
+    // onRowDoubleClick: function (e: any, callback: any) {
+    //     e.sender.element.data("kendoGrid").element.undelegate("tbody tr[data-uid]", "dblclick");
+    //     e.sender.element.data("kendoGrid").element.on('dblclick', 'tbody tr[data-uid]', function (ev:any) {
+    //         if (callback) {
+    //             callback(e.sender.element.data("kendoGrid").dataItem(kendoJQuery(ev.target).closest('tr')))
+    //         }
+    //     })
+    // },
     onRefresh: function (dataSource: any, params: any = {}) {
         if (dataSource && dataSource.kendoDataSource) {
             dataSource.kendoDataSource.read(params);
@@ -74,11 +76,11 @@ var kendoExtensions = {
             dataSource.kendoDataSource.filter(filter.filter)
         }
     },
-    getRowData(e: any) {
-        var data = this.dataItem(e)
-        e.preventDefault();
-        return data;
-    }
+    // getRowData(e: any) {
+    //     var data = this.dataItem(e)
+    //     e.preventDefault();
+    //     return data;
+    // }
 }
 
 export default kendoExtensions

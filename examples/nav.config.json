@@ -81,10 +81,6 @@
             {
               "path": "/dialog",
               "title": "Dialog 对话框"
-            },
-            {
-              "path": "/collapse",
-              "title": "Collapse 折叠面板"
             }
           ]
         }
@@ -191,10 +187,6 @@
             {
               "path": "/dialog",
               "title": "Dialog"
-            },
-            {
-              "path": "/collapse",
-              "title": "Collapse"
             }
           ]
         }
