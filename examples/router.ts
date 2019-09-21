@@ -1,12 +1,12 @@
 import Vue from "vue";
-import Router from "vue-router";
+import VueRouter from "vue-router";
 import hljs from "highlight.js";
 import routes from "./route.config";
 //import { ga } from "globalfunc";
 
-Vue.use(Router);
+Vue.use(VueRouter);
 
-var router = new Router({
+var router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes: routes

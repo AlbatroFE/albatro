@@ -18,6 +18,10 @@ module.exports = {
     );
 
     config.output.libraryExport = "default";
+
+    if (process.env.NODE_ENV === 'production') {
+      config.externals = [{'vue-router': 'VueRouter'},{ 'vue': 'Vue' },{ 'element-ui': 'ELEMENT'},{'highlight.js': 'hljs'}]
+    }
   },
   chainWebpack: config => {
     // @ 默认指向 examples 目录

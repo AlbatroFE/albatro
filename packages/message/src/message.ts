@@ -1,5 +1,4 @@
 import { Message } from "element-ui";
-import "element-ui/lib/theme-chalk/index.css"
 import { MessageType } from "element-ui/types/message";
 
 interface IMessage {

@@ -22,8 +22,8 @@
 </style>
 
 <script>
-  //import Element from "main/index.js";
-  const { version } = Element;
+  import Albatro from "main/index.js";
+  const { version } = Albatro;
 
   const ORIGINAL_THEME = '#409EFF';
   export default {

@@ -12,7 +12,6 @@ import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator"
 
 import { Button, Message } from "element-ui";
-import "element-ui/lib/theme-chalk/index.css";
 import { TzFetch } from "../extension/TzFetch";
 import kendoHelper from "../extension/KendoExtensions";
 Vue.use(Button)

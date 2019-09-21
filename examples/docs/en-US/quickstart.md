@@ -23,7 +23,7 @@ In main.js:
 ```javascript
 import Vue from "vue";
 import AlbatroUI from "albatro-ui";
-import "quickstart-ui/lib/theme-albatro/index.css";
+import "albatro-ui/lib/theme-albatro/index.css";
 import App from "./App.vue";
 
 Vue.use(AlbatroUI);

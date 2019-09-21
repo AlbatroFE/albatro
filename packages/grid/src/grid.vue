@@ -19,22 +19,22 @@
 import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
 
-import "@progress/kendo-ui"
-import '@progress/kendo-theme-default/dist/all.css'
+// import "@progress/kendo-ui"
+// import '@progress/kendo-theme-default/dist/all.css'
 
-import '@progress/kendo-ui/js/cultures/kendo.culture.zh-CN.js'
-import '@progress/kendo-ui/js/messages/kendo.messages.zh-CN.js'
+// import '@progress/kendo-ui/js/cultures/kendo.culture.zh-CN.js'
+// import '@progress/kendo-ui/js/messages/kendo.messages.zh-CN.js'
 
-import { GridInstaller } from "@progress/kendo-grid-vue-wrapper"
-import { DataSourceInstaller } from "@progress/kendo-datasource-vue-wrapper"
+// import { GridInstaller } from "@progress/kendo-grid-vue-wrapper"
+// import { DataSourceInstaller } from "@progress/kendo-datasource-vue-wrapper"
 import { encodeQueryData, IUrlParameterSchema } from "../../super-form/src/extension/TzCommonFunc";
 import "../../super-form/src/extension/StringExtensions";
 import kendoHelper from "../../super-form/src/extension/KendoExtensions";
 import { GridModelSchema, GridModelSchemaType, GridColumnSchema } from "../../super-form/src/schema/GridSchema";
 
-kendo.culture("zh-CN")
-Vue.use(GridInstaller)
-Vue.use(DataSourceInstaller)
+// kendo.culture("zh-CN")
+// Vue.use(GridInstaller)
+// Vue.use(DataSourceInstaller)
 
 @Component({
     props: ["transport_read_url", "columns", "querys", "errorFn"]

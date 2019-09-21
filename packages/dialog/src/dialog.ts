@@ -1,5 +1,4 @@
 import { MessageBox } from "element-ui";
-import "element-ui/lib/theme-chalk/index.css"
 import { VNode } from "vue";
 import { MessageBoxData, MessageBoxCloseAction, ElMessageBoxComponent } from "element-ui/types/message-box";
 import { MessageType } from "element-ui/types/message";

@@ -54,9 +54,8 @@
 import { Vue, Component, Prop } from "vue-property-decorator"
 import { TzSuperFormGroup, TzSuperFormType, TzSuperFormField, getComponentName } from "./schema/TzSuperFormSchema";
 import { TzFetch } from "./extension/TzFetch";
-import 'element-ui/lib/theme-chalk/index.css'
-import ElementUI from "element-ui";
-Vue.use(ElementUI);
+// import Element from "element-ui";
+// Vue.use(Element);
 
 import TzSuperTextarea from "./components/TzSuperTextarea.vue"
 import TzSuperNumber from "./components/TzSuperNumber.vue"

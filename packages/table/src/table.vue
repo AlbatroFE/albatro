@@ -36,7 +36,6 @@ import Vue from "vue";
 import { Component, Prop, Watch } from "vue-property-decorator";
 
 import { Form, FormItem, Input, Row, Col, Collapse, CollapseItem, InputNumber, Pagination, Tooltip, Loading, Message } from "element-ui";
-import "element-ui/lib/theme-chalk/index.css";
 
 import { GridColumnSchema, FieldTypeEnum, GridModelSchemaType } from "../../super-form/src/schema/GridSchema";
 import { encodeQueryData, IUrlParameterSchema } from "../../super-form/src/extension/TzCommonFunc";

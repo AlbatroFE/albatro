@@ -35,34 +35,6 @@ Create basic grid layout using columns.
   <al-col :span="4"><div class="grid-content bg-purple-light"></div></al-col>
 </al-row>
 
-<style>
-  .al-row {
-    margin-bottom: 20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  .al-col {
-    border-radius: 4px;
-  }
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-  .row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
-  }
-</style>
 ```
 :::
 
@@ -79,34 +51,6 @@ Column spacing is supported.
   <al-col :span="6"><div class="grid-content bg-purple"></div></al-col>
 </al-row>
 
-<style>
-  .al-row {
-    margin-bottom: 20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  .al-col {
-    border-radius: 4px;
-  }
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-  .row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
-  }
-</style>
 ```
 :::
 
@@ -132,34 +76,6 @@ Form a more complex hybrid layout by combining the basic 1/24 columns.
   <al-col :span="4"><div class="grid-content bg-purple"></div></al-col>
 </al-row>
 
-<style>
-  .al-row {
-    margin-bottom: 20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  .al-col {
-    border-radius: 4px;
-  }
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-  .row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
-  }
-</style>
 ```
 :::
 
@@ -182,34 +98,6 @@ You can specify column offsets.
   <al-col :span="12" :offset="6"><div class="grid-content bg-purple"></div></al-col>
 </al-row>
 
-<style>
-  .al-row {
-    margin-bottom: 20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  .al-col {
-    border-radius: 4px;
-  }
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-  .row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
-  }
-</style>
 ```
 :::
 
@@ -245,34 +133,6 @@ Use the flex layout to make flexible alignment of columns.
   <al-col :span="6"><div class="grid-content bg-purple"></div></al-col>
 </al-row>
 
-<style>
-  .al-row {
-    margin-bottom: 20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  .al-col {
-    border-radius: 4px;
-  }
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-  .row-bg {
-    padding: 10px 0;
-    background-color: #f9fafc;
-  }
-</style>
 ```
 :::
 
@@ -289,47 +149,7 @@ Taking example by Bootstrap's responsive design, five breakpoints are preset: xs
   <al-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-content bg-purple-light"></div></al-col>
 </al-row>
 
-<style>
-  .al-col {
-    border-radius: 4px;
-  }
-  .bg-purple-dark {
-    background: #99a9bf;
-  }
-  .bg-purple {
-    background: #d3dce6;
-  }
-  .bg-purple-light {
-    background: #e5e9f2;
-  }
-  .grid-content {
-    border-radius: 4px;
-    min-height: 36px;
-  }
-</style>
 ```
-<!-- :::
-
-<!-- ### Utility classes for hiding elements
-
-Additionally, Element provides a series of classes for hiding elements under certain conditions. These classes can be added to any DOM elements or custom components. You need to import the following CSS file to use these classes:
-
-```js
-import 'element-ui/lib/theme-chalk/display.css';
-```
-
-The classes are:
-- `hidden-xs-only` - hide when on extra small viewports only
-- `hidden-sm-only` - hide when on small viewports and down
-- `hidden-sm-and-down` - hide when on small viewports and down
-- `hidden-sm-and-up` - hide when on small viewports and up
-- `hidden-md-only` - hide when on medium viewports only
-- `hidden-md-and-down` - hide when on medium viewports and down
-- `hidden-md-and-up` - hide when on medium viewports and up
-- `hidden-lg-only` - hide when on large viewports only
-- `hidden-lg-and-down` - hide when on large viewports and down
-- `hidden-lg-and-up` - hide when on large viewports and up
-- `hidden-xl-only` - hide when on extra large viewports only -->
 
 :::
 ### Row Attributes
