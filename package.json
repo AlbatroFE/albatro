@@ -14,7 +14,7 @@
   "scripts": {
     "bootstrap": "npm i",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --mode development",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit --coverage -u || exit 0",
     "clean": "rimraf lib && rimraf packages/*/lib && rimraf examples/pages/**/*.vue && rimraf tests/**/coverage && rimraf coverage",

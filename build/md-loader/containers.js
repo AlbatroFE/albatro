@@ -12,7 +12,7 @@ module.exports = md => {
         const content = tokens[idx + 1].type === 'fence' ? tokens[idx + 1].content : '';
         return `<demo-block>
         <div>${md.render(description)}</div>
-        <!--albatro-demo: ${content}:albatro-demo-->
+        <!--element-demo: ${content}:element-demo-->
         `;
       }
       return '</demo-block>';

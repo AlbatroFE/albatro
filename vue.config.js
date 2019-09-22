@@ -19,9 +19,11 @@ module.exports = {
 
     config.output.libraryExport = "default";
 
-    if (process.env.NODE_ENV === 'production') {
-      config.externals = [{'vue-router': 'VueRouter'},{ 'vue': 'Vue' },{ 'element-ui': 'ELEMENT'},{'highlight.js': 'hljs'},{'jQuery':'jQuery'},{'algoliasearch':'algoliasearch'}]
-    }
+    // if (process.env.NODE_ENV === 'production') {
+    //   config.externals = [{'vue-router': 'VueRouter'},{ 'vue': 'Vue' },{ 'element-ui': 'ELEMENT'},{'highlight.js': 'hljs'},{'jQuery':'jQuery'},{'algoliasearch':'algoliasearch'}]
+    // }
+
+    config.externals = [{'vue-router': 'VueRouter'},{ 'vue': 'Vue' },{ 'element-ui': 'ELEMENT'},{'highlight.js': 'hljs'},{'jQuery':'jQuery'},{'algoliasearch':'algoliasearch'}]
   },
   chainWebpack: config => {
     // @ 默认指向 examples 目录
@@ -29,6 +31,7 @@ module.exports = {
     config.resolve.alias
       .set("@", path.resolve("examples"))
       .set("~", path.resolve("packages"))
+      .set("packages", path.resolve("packages"))
       .set("main", path.resolve("src"))
       .set("albatro-ui", path.resolve("./"));
 
@@ -49,6 +52,14 @@ module.exports = {
       .end();
 
     config.module
+      .rule("css")
+      //.test(/\.css$/)
+      .include.add(/packages/)
+      .end()
+      .include.add(/examples/)
+      .end();
+
+    config.module
       .rule("js")
       .include.add(/src/)
       .end();
@@ -56,25 +67,16 @@ module.exports = {
     config.module
       .rule("md")
       .test(/\.md$/)
-      //.include.add(/examples/).end()
       .use("vue")
       .loader("vue-loader")
       .options({
-        preserveWhitespace: true
+        compilerOptions : { 
+          preserveWhitespace: false
+        }
       })
+      .end()
+      .use("md")
+      .loader(path.resolve("build/md-loader/index.js"))
       .end();
-
-    config.module
-      .rule("md")
-      .use("custom")
-      .loader(path.resolve("build", "./md-loader/index.js"))
-      .end();
-
-    // config.plugin('CopyWebpackPlugin')
-    //   .use(CopyWebpackPlugin, [{ from : /examples\/versions.json$/ }])
-
-    // config.plugins.push(new CopyWebpackPlugin([{
-    //     from: 'examples/versions.json'
-    // }]));
   }
 };

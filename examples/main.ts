@@ -2,7 +2,6 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 
-import "~/theme-albatro/src/index.scss";
 import "@/demo-styles/index.scss";
 import "@/assets/styles/common.scss";
 import "@/assets/styles/fonts/style.css";
@@ -21,8 +20,9 @@ Vue.component("footer-nav", FooterNav);
 import Element from "element-ui";
 Vue.use(Element);
 
-import AlbatroUI from "~/index";
-Vue.use(AlbatroUI);
+import Albatro from "~/index";
+import "packages/theme-albatro/src/index.scss";
+Vue.use(Albatro);
 
 Vue.config.productionTip = false;
 Vue.prototype.$event = new Vue();
