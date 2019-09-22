@@ -75,6 +75,13 @@ module.exports = {
         }
       })
       .end()
+      .use("vue")
+      .loader("cache-loader")
+      .end()
+      // .use("ts-loader")
+      // .exclude(/CHANGELOG.*/).end()
+      // .loader("ts-loader")
+      // .end()
       .use("md")
       .loader(path.resolve("build/md-loader/index.js"))
       .end();
