@@ -76,6 +76,15 @@
           ]
         },
         {
+          "groupName": "Notice",
+          "list": [
+            {
+              "path": "/message",
+              "title": "Message 消息提示"
+            }
+          ]
+        },
+        {
           "groupName": "Others",
           "list": [
             {
