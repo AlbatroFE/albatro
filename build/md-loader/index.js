@@ -6,6 +6,7 @@ const {
 const md = require('./config');
 
 module.exports = function(source) {
+  debugger
   const content = md.render(source);
 
   const startTag = '<!--element-demo:';

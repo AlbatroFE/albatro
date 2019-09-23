@@ -54,7 +54,6 @@
   </div>
 </template>
 <script>
-//import bus from "../../bus.js";
 import ThemeConfigurator from "../../components/theme-configurator";
 import ComponentsPreview from "../../components/theme/components-preview";
 import BasicTokensPreview from "../../components/theme/basic-tokens-preview";

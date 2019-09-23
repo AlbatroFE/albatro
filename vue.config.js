@@ -1,6 +1,7 @@
 const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const isPlay = process.env.VUE_APP_PLAY_ENV;
+const isPro = process.env.NODE_ENV === "production";
 
 module.exports = {
   pages: {
@@ -8,6 +9,7 @@ module.exports = {
       entry: !isPlay ? "examples/main.ts" : "examples/play.ts"
     }
   },
+  productionSourceMap: !isPro,
   configureWebpack: config => {
     config.plugins.push(
       new CopyWebpackPlugin([
@@ -19,15 +21,34 @@ module.exports = {
 
     config.output.libraryExport = "default";
 
-    // if (process.env.NODE_ENV === 'production') {
-    //   config.externals = [{'vue-router': 'VueRouter'},{ 'vue': 'Vue' },{ 'element-ui': 'ELEMENT'},{'highlight.js': 'hljs'},{'jQuery':'jQuery'},{'algoliasearch':'algoliasearch'}]
-    // }
+    if (isPro) {
+      config.externals = [
+        { 'vue-router': 'VueRouter' }, 
+        { 'vue': 'Vue' }, 
+        { 'element-ui': 'ELEMENT' }, 
+        { 'highlight.js': 'hljs' }, 
+        { 'jQuery': 'jQuery' }, 
+        { 'algoliasearch': 'algoliasearch' }
+      ];
 
-    config.externals = [{'vue-router': 'VueRouter'},{ 'vue': 'Vue' },{ 'element-ui': 'ELEMENT'},{'highlight.js': 'hljs'},{'jQuery':'jQuery'},{'algoliasearch':'algoliasearch'}]
+      // https://webpack.js.org/plugins/uglifyjs-webpack-plugin/#chunkfilter
+      config.optimization.minimizer[0].options.chunkFilter = (chunk) => {
+        // Exclude uglification for the `vendor` chunk
+        // if (chunk.name === 'chunk-vendors') {
+        //   return true;
+        // }
+
+        if (chunk.name === 'index') {
+          return false;
+        }
+
+        // console.log("test:chunk: " + chunk.name)
+        return true;
+      };
+    }
   },
   chainWebpack: config => {
-    // @ 默认指向 examples 目录
-    // @ 默认指向 packages 目录
+    // 设置全局变量别名
     config.resolve.alias
       .set("@", path.resolve("examples"))
       .set("~", path.resolve("packages"))
@@ -45,7 +66,6 @@ module.exports = {
 
     config.module
       .rule("scss")
-      //.test(/\.css$/)
       .include.add(/packages/)
       .end()
       .include.add(/examples/)
@@ -53,35 +73,30 @@ module.exports = {
 
     config.module
       .rule("css")
-      //.test(/\.css$/)
-      .include.add(/packages/)
-      .end()
-      .include.add(/examples/)
-      .end();
+      .include.add(/packages/).end()
+      .include.add(/examples/).end();
 
     config.module
       .rule("js")
       .include.add(/src/)
       .end();
 
+    // config.module
+    //   .rule("vue")
+    //   .exclude.add(/examples\/pages\/en-US/).end();
+
     config.module
       .rule("md")
       .test(/\.md$/)
+      //.exclude.add(/examples\/docs\/en-US/).end()
       .use("vue")
       .loader("vue-loader")
       .options({
-        compilerOptions : { 
+        compilerOptions: {
           preserveWhitespace: false
         }
       })
       .end()
-      .use("vue")
-      .loader("cache-loader")
-      .end()
-      // .use("ts-loader")
-      // .exclude(/CHANGELOG.*/).end()
-      // .loader("ts-loader")
-      // .end()
       .use("md")
       .loader(path.resolve("build/md-loader/index.js"))
       .end();

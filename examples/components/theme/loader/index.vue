@@ -1,5 +1,4 @@
 <script>
-//import bus from "../../../this.$event.js";
 import Loading from "./loading";
 import DocStyle from "./docStyle";
 import { updateVars } from "./api.js";

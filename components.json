@@ -1,16 +1,15 @@
 {
-    "dialog": "./packages/dialog/index.js",
-    "button": "./packages/button/index.js",
-    "table": "./packages/table/index.js",
-    "super-form": "./packages/super-form/index.js",
-    "row": "./packages/row/index.js",
-    "col": "./packages/col/index.js",
-    "container": "./packages/container/index.js",
-    "header": "./packages/header/index.js",
-    "aside": "./packages/aside/index.js",
-    "main": "./packages/main/index.js",
-    "footer": "./packages/footer/index.js",
-    "grid": "./packages/grid/index.js",
-    "message": "./packages/grid/message.js"
-  }
-  
+  "dialog": "./packages/dialog/index.js",
+  "button": "./packages/button/index.js",
+  "table": "./packages/table/index.js",
+  "super-form": "./packages/super-form/index.js",
+  "row": "./packages/row/index.js",
+  "col": "./packages/col/index.js",
+  "container": "./packages/container/index.js",
+  "header": "./packages/header/index.js",
+  "aside": "./packages/aside/index.js",
+  "main": "./packages/main/index.js",
+  "footer": "./packages/footer/index.js",
+  "grid": "./packages/grid/index.js",
+  "message": "./packages/message/index.js"
+}

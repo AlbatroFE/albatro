@@ -166,7 +166,6 @@
 </template>
 
 <script>
-//import bus from "../../bus";
 import { tintColor } from "../../color.js";
 import {
   ACTION_COMPONECT_SELECT,

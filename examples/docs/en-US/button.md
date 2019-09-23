@@ -7,41 +7,41 @@ Commonly used button.
 :::demo Use `type`, `plain`, `round` and `circle` to define Button's style.
 
 ```html
-<el-row>
-  <el-button>Default</el-button>
-  <el-button type="primary">Primary</el-button>
-  <el-button type="success">Success</el-button>
-  <el-button type="info">Info</el-button>
-  <el-button type="warning">Warning</el-button>
-  <el-button type="danger">Danger</el-button>
-</el-row>
+<al-row>
+  <al-button>Default</al-button>
+  <al-button type="primary">Primary</al-button>
+  <al-button type="success">Success</al-button>
+  <al-button type="info">Info</al-button>
+  <al-button type="warning">Warning</al-button>
+  <al-button type="danger">Danger</al-button>
+</al-row>
 
-<el-row>
-  <el-button plain>Plain</el-button>
-  <el-button type="primary" plain>Primary</el-button>
-  <el-button type="success" plain>Success</el-button>
-  <el-button type="info" plain>Info</el-button>
-  <el-button type="warning" plain>Warning</el-button>
-  <el-button type="danger" plain>Danger</el-button>
-</el-row>
+<al-row>
+  <al-button plain>Plain</al-button>
+  <al-button type="primary" plain>Primary</al-button>
+  <al-button type="success" plain>Success</al-button>
+  <al-button type="info" plain>Info</al-button>
+  <al-button type="warning" plain>Warning</al-button>
+  <al-button type="danger" plain>Danger</al-button>
+</al-row>
 
-<el-row>
-  <el-button round>Round</el-button>
-  <el-button type="primary" round>Primary</el-button>
-  <el-button type="success" round>Success</el-button>
-  <el-button type="info" round>Info</el-button>
-  <el-button type="warning" round>Warning</el-button>
-  <el-button type="danger" round>Danger</el-button>
-</el-row>
+<al-row>
+  <al-button round>Round</al-button>
+  <al-button type="primary" round>Primary</al-button>
+  <al-button type="success" round>Success</al-button>
+  <al-button type="info" round>Info</al-button>
+  <al-button type="warning" round>Warning</al-button>
+  <al-button type="danger" round>Danger</al-button>
+</al-row>
 
-<el-row>
-  <el-button icon="el-icon-search" circle></el-button>
-  <el-button type="primary" icon="el-icon-edit" circle></el-button>
-  <el-button type="success" icon="el-icon-check" circle></el-button>
-  <el-button type="info" icon="el-icon-message" circle></el-button>
-  <el-button type="warning" icon="el-icon-star-off" circle></el-button>
-  <el-button type="danger" icon="el-icon-delete" circle></el-button>
-</el-row>
+<al-row>
+  <al-button icon="al-icon-search" circle></al-button>
+  <al-button type="primary" icon="al-icon-edit" circle></al-button>
+  <al-button type="success" icon="al-icon-check" circle></al-button>
+  <al-button type="info" icon="al-icon-message" circle></al-button>
+  <al-button type="warning" icon="al-icon-star-off" circle></al-button>
+  <al-button type="danger" icon="al-icon-delete" circle></al-button>
+</al-row>
 ```
 :::
 
@@ -52,23 +52,23 @@ The `disabled` attribute determines if the button is disabled.
 :::demo Use `disabled` attribute to determine whether a button is disabled. It accepts a `Boolean` value.
 
 ```html
-<el-row>
-  <el-button disabled>Default</el-button>
-  <el-button type="primary" disabled>Primary</el-button>
-  <el-button type="success" disabled>Success</el-button>
-  <el-button type="info" disabled>Info</el-button>
-  <el-button type="warning" disabled>Warning</el-button>
-  <el-button type="danger" disabled>Danger</el-button>
-</el-row>
+<al-row>
+  <al-button disabled>Default</al-button>
+  <al-button type="primary" disabled>Primary</al-button>
+  <al-button type="success" disabled>Success</al-button>
+  <al-button type="info" disabled>Info</al-button>
+  <al-button type="warning" disabled>Warning</al-button>
+  <al-button type="danger" disabled>Danger</al-button>
+</al-row>
 
-<el-row>
-  <el-button plain disabled>Plain</el-button>
-  <el-button type="primary" plain disabled>Primary</el-button>
-  <el-button type="success" plain disabled>Success</el-button>
-  <el-button type="info" plain disabled>Info</el-button>
-  <el-button type="warning" plain disabled>Warning</el-button>
-  <el-button type="danger" plain disabled>Danger</el-button>
-</el-row>
+<al-row>
+  <al-button plain disabled>Plain</al-button>
+  <al-button type="primary" plain disabled>Primary</al-button>
+  <al-button type="success" plain disabled>Success</al-button>
+  <al-button type="info" plain disabled>Info</al-button>
+  <al-button type="warning" plain disabled>Warning</al-button>
+  <al-button type="danger" plain disabled>Danger</al-button>
+</al-row>
 ```
 :::
 
@@ -78,8 +78,8 @@ Buttons without border and background.
 
 :::demo
 ```html
-<el-button type="text">Text Button</el-button>
-<el-button type="text" disabled>Text Button</el-button>
+<al-button type="text">Text Button</al-button>
+<al-button type="text" disabled>Text Button</al-button>
 ```
 :::
 
@@ -90,11 +90,11 @@ Use icons to add more meaning to Button. You can use icon alone to save some spa
 :::demo Use the `icon` attribute to add icon. You can find the icon list in Element icon component. Adding icons to the right side of the text is achievable with an `<i>` tag. Custom icons can be used as well.
 
 ```html
-<el-button type="primary" icon="el-icon-edit"></el-button>
-<el-button type="primary" icon="el-icon-share"></el-button>
-<el-button type="primary" icon="el-icon-delete"></el-button>
-<el-button type="primary" icon="el-icon-search">Search</el-button>
-<el-button type="primary">Upload<i class="el-icon-upload el-icon-right"></i></el-button>
+<al-button type="primary" icon="al-icon-edit"></al-button>
+<al-button type="primary" icon="al-icon-share"></al-button>
+<al-button type="primary" icon="al-icon-delete"></al-button>
+<al-button type="primary" icon="al-icon-search">Search</al-button>
+<al-button type="primary">Upload<i class="al-icon-upload al-icon-right"></i></al-button>
 ```
 :::
 
@@ -102,18 +102,18 @@ Use icons to add more meaning to Button. You can use icon alone to save some spa
 
 Displayed as a button group, can be used to group a series of similar operations.
 
-:::demo Use tag `<el-button-group>` to group your buttons.
+:::demo Use tag `<al-button-group>` to group your buttons.
 
 ```html
-<el-button-group>
-  <el-button type="primary" icon="el-icon-arrow-left">Previous Page</el-button>
-  <el-button type="primary">Next Page<i class="el-icon-arrow-right el-icon-right"></i></el-button>
-</el-button-group>
-<el-button-group>
-  <el-button type="primary" icon="el-icon-edit"></el-button>
-  <el-button type="primary" icon="el-icon-share"></el-button>
-  <el-button type="primary" icon="el-icon-delete"></el-button>
-</el-button-group>
+<al-button-group>
+  <al-button type="primary" icon="al-icon-arrow-left">Previous Page</al-button>
+  <al-button type="primary">Next Page<i class="al-icon-arrow-right al-icon-right"></i></al-button>
+</al-button-group>
+<al-button-group>
+  <al-button type="primary" icon="al-icon-edit"></al-button>
+  <al-button type="primary" icon="al-icon-share"></al-button>
+  <al-button type="primary" icon="al-icon-delete"></al-button>
+</al-button-group>
 ```
 :::
 
@@ -124,7 +124,7 @@ Click the button to load data, then the button displays a loading state.
 :::demo Set `loading` attribute to `true` to display loading state.
 
 ```html
-<el-button type="primary" :loading="true">Loading</el-button>
+<al-button type="primary" :loading="true">Loading</al-button>
 ```
 :::
 
@@ -135,18 +135,18 @@ Besides default size, Button component provides three additional sizes for you t
 :::demo Use attribute `size` to set additional sizes with `medium`, `small` or `mini`.
 
 ```html
-<el-row>
-  <el-button>Default</el-button>
-  <el-button size="medium">Medium</el-button>
-  <el-button size="small">Small</el-button>
-  <el-button size="mini">Mini</el-button>
-</el-row>
-<el-row>
-  <el-button round>Default</el-button>
-  <el-button size="medium" round>Medium</el-button>
-  <el-button size="small" round>Small</el-button>
-  <el-button size="mini" round>Mini</el-button>
-</el-row>
+<al-row>
+  <al-button>Default</al-button>
+  <al-button size="medium">Medium</al-button>
+  <al-button size="small">Small</al-button>
+  <al-button size="mini">Mini</al-button>
+</al-row>
+<al-row>
+  <al-button round>Default</al-button>
+  <al-button size="medium" round>Medium</al-button>
+  <al-button size="small" round>Small</al-button>
+  <al-button size="mini" round>Mini</al-button>
+</al-row>
 ```
 :::
 

@@ -243,7 +243,6 @@
 </template>
 
 <script>
-//import bus from "../../bus";
 import {
   DEFAULT_THEME_CONFIG,
   ACTION_DOWNLOAD_THEME

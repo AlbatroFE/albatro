@@ -29,7 +29,6 @@
 </style>
 
 <script>
-//import bus from "../../bus.js";
 import { getVars } from "../theme/loader/api.js";
 import mainPanel from "./main";
 import actionPanel from "./action";
