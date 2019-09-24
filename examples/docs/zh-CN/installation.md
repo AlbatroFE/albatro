@@ -14,7 +14,7 @@ npm i albatro-ui -S
 
 ```html
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/albatro-ui/lib/theme-chalk/index.css">
+<link rel="stylesheet" href="https://unpkg.com/albatro-ui/lib/theme-albatro/index.css">
 <!-- 引入组件库 -->
 <script src="https://unpkg.com/albatro-ui/lib/index.js"></script>
 ```

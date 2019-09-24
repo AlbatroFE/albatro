@@ -14,7 +14,7 @@ Get the latest version from [unpkg.com/albatro-ui](https://unpkg.com/albatro-ui/
 
 ```html
 <!-- import CSS -->
-<link rel="stylesheet" href="https://unpkg.com/albatro-ui/lib/theme-chalk/index.css">
+<link rel="stylesheet" href="https://unpkg.com/albatro-ui/lib/theme-albatro/index.css">
 <!-- import JavaScript -->
 <script src="https://unpkg.com/albatro-ui/lib/index.js"></script>
 ```

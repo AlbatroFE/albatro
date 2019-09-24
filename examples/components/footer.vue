@@ -11,7 +11,7 @@
 /blob/dev/FAQ.md" class="footer-main-link" target="_blank">{{ langConfig.faq }}</a>
         <a href="https://github.com/AlbatroFE/albatro
 /starter" class="footer-main-link" target="_blank">{{ langConfig.starter }}</a>
-        <a :href="'/#/' + lang + '/component/custom-theme'" class="footer-main-link" target="_blank">{{ langConfig.theme }}</a>
+        <!-- <a :href="'/#/' + lang + '/component/custom-theme'" class="footer-main-link" target="_blank">{{ langConfig.theme }}</a> -->
         <a href="https://github.com/elemefe/Albatro-react" class="footer-main-link" target="_blank">Albatro-React</a>
         <a href="https://github.com/AlbatroFE/Albatro-angular" class="footer-main-link" target="_blank">Albatro-Angular</a>
       </div>

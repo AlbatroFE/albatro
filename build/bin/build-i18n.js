@@ -21,6 +21,9 @@ langConfig.forEach(lang => {
       content = content.replace(new RegExp(`<%=\\s*${ key }\\s*>`, 'g'), pairs[key]);
     });
 
-    fs.writeFileSync(outputPath, content);
+    
+    if(page === "index" || page === "component" || page === "changelog"){   
+      fs.writeFileSync(outputPath, content);
+    }
   });
 });

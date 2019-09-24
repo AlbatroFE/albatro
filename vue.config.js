@@ -28,6 +28,7 @@ module.exports = {
         { 'element-ui': 'ELEMENT' }, 
         { 'highlight.js': 'hljs' }, 
         //{ 'jQuery': 'jQuery' }, 
+        { 'algoliasearch': 'algoliasearch' },
         { '@progress/kendo-ui': 'kendo' }
       ];
 

@@ -373,13 +373,9 @@
   </div>
 </template>
 <script>
-  import ThemePicker from "./theme-picker.vue";
   import AlgoliaSearch from "./search.vue";
   import compoLang from "../i18n/component.json";
   import Albatro from "main/index.js";
-  import themeLoader from "./theme/loader";
-  import { getTestEle } from "./theme/loader/api.js";
-  import { ACTION_USER_CONFIG_UPDATE } from "./theme/constant.js";
   const { version } = Albatro;
 
   export default {
@@ -397,10 +393,7 @@
       };
     },
 
-    //mixins: [themeLoader],
-
     components: {
-      ThemePicker,
       AlgoliaSearch
     },
 
@@ -454,17 +447,6 @@
       };
       xhr.open('GET', '/versions.json');
       xhr.send();
-      let primaryLast = '#409EFF';
-      this.$event.$on(ACTION_USER_CONFIG_UPDATE, (val) => {
-        let primaryColor = val.global['$--color-primary'];
-        if (!primaryColor) primaryColor = '#409EFF';
-        const base64svg = 'data:image/svg+xml;base64,';
-        const imgSet = document.querySelectorAll('h1 img');
-        imgSet.forEach((img) => {
-          img.src = `${base64svg}${window.btoa(window.atob(img.src.replace(base64svg, '')).replace(primaryLast, primaryColor))}`;
-        });
-        primaryLast = primaryColor;
-      });
     }
   };
 </script>
