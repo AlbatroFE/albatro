@@ -9,7 +9,7 @@ export interface AlDialog {
     confirm(message: string, title: string, type: MessageType, confirmButtonText: string, cancelButtonText: string): Promise<any>;
 
     /** Show a dialog */
-    show(message: VNode, title: any, confirmButtonText: string, cancelButtonText: string, showCancelButton: boolean, showConfirmButton: boolean, beforeClose: Function, propsData: any): Promise<any>;
+    show(message: VNode, title: any, confirmButtonText: string, cancelButtonText: string, showConfirmButton: boolean, showCancelButton: boolean, beforeClose: Function, propsData: any): Promise<any>;
 }
 
 declare module 'vue/types/vue' {

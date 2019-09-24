@@ -6,12 +6,12 @@ import { MessageType } from "element-ui/types/message";
 interface IDialog {
     alert(message: string, title: string, confirmButtonText: string): Promise<any>;
     confirm(message: string, title: string, type: MessageType, confirmButtonText: string, cancelButtonText: string): Promise<any>;
-    show(message: VNode, title: any, confirmButtonText: string, cancelButtonText: string, showCancelButton: boolean, showConfirmButton: boolean, beforeClose: Function, propsData: any): Promise<any>;
+    show(message: VNode, title: any, confirmButtonText: string, cancelButtonText: string, showConfirmButton: boolean, showCancelButton: boolean, beforeClose: Function): Promise<any>;
 }
 
 class Dialog implements IDialog {
 
-    alert(message: string, title: string, confirmButtonText: string = "Ok"): Promise<any> {
+    alert(message: string, title: string, confirmButtonText: string): Promise<any> {
         var promise = new Promise((resolve, reject) => {
             MessageBox.alert(message, title, {
                 confirmButtonText: confirmButtonText
@@ -41,7 +41,7 @@ class Dialog implements IDialog {
         return promise;
     }
 
-    show(message: VNode, title: any, confirmButtonText: string, cancelButtonText: string, showCancelButton: boolean, showConfirmButton: boolean, beforeClose?: Function): Promise<any> {
+    show(message: VNode, title: any, confirmButtonText: string, cancelButtonText: string, showConfirmButton: boolean = true, showCancelButton: boolean = true, beforeClose?: Function): Promise<any> {
         var promise = new Promise((resolve, reject) => {
             MessageBox({
                 message: message,
@@ -50,12 +50,12 @@ class Dialog implements IDialog {
                 cancelButtonText: cancelButtonText,
                 showConfirmButton: showConfirmButton,
                 showCancelButton: showCancelButton,
-                beforeClose: (action: MessageBoxCloseAction, instance: ElMessageBoxComponent, done: (() => void)) => {
+                beforeClose: (action: MessageBoxCloseAction, instance: ElMessageBoxComponent, done: () => void) => {
                     if (action == "confirm" && beforeClose) {
-                        beforeClose(action, instance);
+                        beforeClose(action, instance, done);
+                    } else {
+                        done();
                     }
-
-                    done();
                 },
                 customClass: 'al-dialog'
             }).then((res) => {

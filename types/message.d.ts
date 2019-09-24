@@ -2,21 +2,26 @@ import Vue, { VNode } from 'vue'
 
 export type MessageType = 'success' | 'warning' | 'info' | 'error'
 
+export declare class AlMessageComponent extends Vue {
+    /** Close the Loading instance */
+    close(): void
+}
+
 export interface AlMessage {
     /** Show a common message */
-    show(message: string, type?: MessageType, showClose?: boolean, duration?: number)
+    show(message: string, type?: MessageType, showClose?: boolean, duration?: number): AlMessageComponent
 
     /** Show a success message */
-    success(message: string, showClose?: boolean, duration?: number)
+    success(message: string, showClose?: boolean, duration?: number): AlMessageComponent
 
     /** Show a warning message */
-    warning(message: string, showClose?: boolean, duration?: number)
+    warning(message: string, showClose?: boolean, duration?: number): AlMessageComponent
 
     /** Show an info message */
-    info(message: string, showClose?: boolean, duration?: number)
+    info(message: string, showClose?: boolean, duration?: number): AlMessageComponent
 
     /** Show an error message */
-    error(message: string, showClose?: boolean, duration?: number)
+    error(message: string, showClose?: boolean, duration?: number): AlMessageComponent
 
     /** Close all message */
     closeAll()
