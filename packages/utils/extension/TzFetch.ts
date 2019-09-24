@@ -13,7 +13,13 @@ export namespace TzFetch {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(data)
-            }).then(res => res.json()).then(res => {
+            }).then(res => {
+                if(res.status === 200) {
+                    return res.json();
+                } else {
+                    reject(`${url}: ${res.statusText}(${res.status}) `)
+                }                
+            }).then(res => {
                 TzSpin.close()
                 resolve(res)
             }).catch((e) => {
@@ -35,7 +41,13 @@ export namespace TzFetch {
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }).then(res => res.json()).then(res => {
+            }).then(res => {
+                if(res.status === 200) {
+                    return res.json();
+                } else {
+                    reject(`${url}: ${res.statusText}(${res.status}) `)
+                }                
+            }).then(res => {
                 TzSpin.close()
                 resolve(res)
             }).catch(e => {
