@@ -1,2 +1,2 @@
-import AlButton from "~/button/src/button.vue"; // ~ is an alias to /packages
+import AlButton from "packages/button/src/button.vue";
 export default AlButton;

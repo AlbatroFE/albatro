@@ -20,7 +20,7 @@ Vue.component("footer-nav", FooterNav);
 import Element from "element-ui";
 Vue.use(Element);
 
-import Albatro from "~/index";
+import Albatro from "packages/index";
 import "packages/theme-albatro/src/index.scss";
 Vue.use(Albatro);
 

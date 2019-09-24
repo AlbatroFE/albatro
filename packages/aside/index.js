@@ -1,4 +1,4 @@
-import AlAside from "~/container/src/aside";
+import AlAside from "packages/container/src/aside";
 
 /* istanbul ignore next */
 AlAside.install = function(Vue) {

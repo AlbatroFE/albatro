@@ -1,2 +1,2 @@
-import AlRow from "~/row/src/row"; // ~ is an alias to /packages
+import AlRow from "packages/row/src/row"; // packages is an alias to /packages
 export default AlRow;

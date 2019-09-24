@@ -27,8 +27,8 @@ module.exports = {
         { 'vue': 'Vue' }, 
         { 'element-ui': 'ELEMENT' }, 
         { 'highlight.js': 'hljs' }, 
-        { 'jQuery': 'jQuery' }, 
-        { 'algoliasearch': 'algoliasearch' }
+        //{ 'jQuery': 'jQuery' }, 
+        { '@progress/kendo-ui': 'kendo' }
       ];
 
       // https://webpack.js.org/plugins/uglifyjs-webpack-plugin/#chunkfilter
@@ -71,19 +71,16 @@ module.exports = {
       .include.add(/examples/)
       .end();
 
-    config.module
-      .rule("css")
-      .include.add(/packages/).end()
-      .include.add(/examples/).end();
+
+      config.module
+      .rule("scss")
+      .include.add(/node_modules/)
+      .end();
 
     config.module
       .rule("js")
       .include.add(/src/)
       .end();
-
-    // config.module
-    //   .rule("vue")
-    //   .exclude.add(/examples\/pages\/en-US/).end();
 
     config.module
       .rule("md")

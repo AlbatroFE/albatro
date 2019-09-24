@@ -1,4 +1,4 @@
-import AlRow from "~/row/src/row";
+import AlRow from "packages/row/src/row";
 
 /* istanbul ignore next */
 AlRow.install = function(Vue) {

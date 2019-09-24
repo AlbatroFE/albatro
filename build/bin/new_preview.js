@@ -20,12 +20,12 @@ const PackagePath = path.resolve(RootPath, 'packages', componentname);
 const Files = [
     {
         filename: path.join(PackagePath, 'index.ts'),
-        content: `import Al${ComponentName} from "~/${componentname}/src/${componentname}.vue";
+        content: `import Al${ComponentName} from "packages/${componentname}/src/${componentname}.vue";
 export default Al${ComponentName};`
     },
     {
         filename: path.join(PackagePath, 'index.js'),
-        content: `import Al${ComponentName} from "~/${componentname}/src/${componentname}.vue";
+        content: `import Al${ComponentName} from "packages/${componentname}/src/${componentname}.vue";
 
 /* istanbul ignore next */
 Al${ComponentName}.install = function(Vue) {
@@ -55,7 +55,7 @@ export default class Al${ComponentName} extends Vue{}
     {
         filename: path.join(RootPath, 'tests/unit/specs', `${componentname}.spec.ts`),
         content: `import { shallowMount } from "@vue/test-utils"
-import Al${ComponentName} from "~/${componentname}/src/${componentname}.vue";
+import Al${ComponentName} from "packages/${componentname}/src/${componentname}.vue";
 
 describe('Al${ComponentName}', () => {
     it('mount', () => {

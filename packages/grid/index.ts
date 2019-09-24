@@ -1,2 +1,2 @@
-import AlGrid from "~/grid/src/grid.vue";
+import AlGrid from "packages/grid/src/grid.vue";
 export default AlGrid;

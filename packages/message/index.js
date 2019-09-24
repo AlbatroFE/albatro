@@ -1,2 +1,2 @@
-import AlMessage from "~/dialog/src/dialog";
+import AlMessage from "packages/dialog/src/dialog";
 export default AlMessage;

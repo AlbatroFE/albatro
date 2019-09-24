@@ -105,7 +105,9 @@ const generateMiscRoutes = function (lang: any) {
         path: `/${lang}`, // 首页
         meta: { lang },
         name: "home" + lang,
-        component: load(lang, "index")
+        // component: load(lang, "index")
+        // TODO: 暂时首页加载组件页面，后续完善后切换回
+        component: load(lang, "component")
     };
 
     return [guideRoute, resourceRoute, themeRoute, indexRoute];

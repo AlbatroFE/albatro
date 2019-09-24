@@ -1,2 +1,2 @@
-import AlHeader from "~/container/src/header";
+import AlHeader from "packages/container/src/header";
 export default AlHeader;

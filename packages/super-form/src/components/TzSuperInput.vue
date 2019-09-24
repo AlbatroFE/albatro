@@ -1,39 +1,45 @@
 <template>
-    <el-input :placeholder="'请输入' + desc.label" v-model="newValue" @change="update">
-    </el-input>
+  <el-input
+    :placeholder="'请输入' + desc.label"
+    v-model="newValue"
+    @change="update"
+    v-bind="desc.attrs"
+    v-on="desc.on"
+    :class="desc.class"
+    :style="desc.style"
+  ></el-input>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop, Watch } from "vue-property-decorator"
+import { Component, Prop, Watch } from "vue-property-decorator";
 
 import { Input } from "element-ui";
-Vue.use(Input)
+Vue.use(Input);
 
 @Component({
-    props: ["value", "desc"],
-    model: {
-        prop: 'value',
-        event: 'change'
-    },
-    components: {
-        Input
-    }
+  props: ["value", "desc"],
+  model: {
+    prop: "value",
+    event: "change"
+  },
+  components: {
+    Input
+  }
 })
 export default class TzSuperInput extends Vue {
-    @Prop() desc!: any
-    @Prop() value!: any
+  @Prop() desc!: any;
+  @Prop() value!: any;
 
-    newValue: any = this.value
+  newValue: any = this.value;
 
-    @Watch('value', { immediate: true, deep: true })
-    onFormDataChanged(val: any, oldVal: any) {
-        this.newValue = this.value
-    }
+  @Watch("value", { immediate: true, deep: true })
+  onFormDataChanged(val: any, oldVal: any) {
+    this.newValue = this.value;
+  }
 
-    update() {
-        this.$emit('change', this.newValue)
-    }
+  update() {
+    this.$emit("change", this.newValue);
+  }
 }
-
 </script>

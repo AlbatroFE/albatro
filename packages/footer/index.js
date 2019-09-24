@@ -1,4 +1,4 @@
-import AlFooter from "~/container/src/footer";
+import AlFooter from "packages/container/src/footer";
 
 /* istanbul ignore next */
 AlFooter.install = function(Vue) {

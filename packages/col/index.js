@@ -1,4 +1,4 @@
-import AlCol from "~/col/src/col";
+import AlCol from "packages/col/src/col";
 
 /* istanbul ignore next */
 AlCol.install = function(Vue) {

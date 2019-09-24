@@ -1,4 +1,4 @@
-import AlHeader from "~/container/src/header";
+import AlHeader from "packages/container/src/header";
 
 /* istanbul ignore next */
 AlHeader.install = function(Vue) {

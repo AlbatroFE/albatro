@@ -1,4 +1,4 @@
-import AlButton from "~/button/src/button.vue";
+import AlButton from "packages/button/src/button.vue";
 
 /* istanbul ignore next */
 AlButton.install = function(Vue) {

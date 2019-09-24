@@ -1,27 +1,32 @@
 <template>
-    <el-input-number :value="value" @change="update">
-    </el-input-number>
+  <el-input-number
+    :value="value"
+    @change="update"
+    v-bind="desc.attrs"
+    v-on="desc.on"
+    :class="desc.class"
+    :style="desc.style"
+  ></el-input-number>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop } from "vue-property-decorator"
+import { Component, Prop } from "vue-property-decorator";
 
 import { InputNumber } from "element-ui";
-Vue.use(InputNumber)
+Vue.use(InputNumber);
 
 @Component({
-    props: ["value", "desc"],
-    model: {
-        prop: 'value',
-        event: 'change'
-    }
+  props: ["value", "desc"],
+  model: {
+    prop: "value",
+    event: "change"
+  }
 })
 export default class TzSuperNumber extends Vue {
-    @Prop() desc!: any
-    update(value: number) {
-        this.$emit('change', value)
-    }
+  @Prop() desc!: any;
+  update(value: number) {
+    this.$emit("change", value);
+  }
 }
-
 </script>

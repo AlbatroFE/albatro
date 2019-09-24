@@ -25,8 +25,8 @@ import {
   TzSuperFormType,
   getFormDesc,
   TzSuperOptionSchema
-} from "../../packages/super-form/src/schema/TzSuperFormSchema";
-import { FieldTypeEnum } from "../../packages/super-form/src/schema/GridSchema";
+} from "packages/utils/schema/TzSuperFormSchema";
+import { FieldTypeEnum } from "packages/utils/schema/GridSchema";
 
 @Component({
   props: [],

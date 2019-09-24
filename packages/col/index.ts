@@ -1,2 +1,2 @@
-import AlCol from "~/col/src/col"; // ~ is an alias to /packages
+import AlCol from "packages/col/src/col";
 export default AlCol;

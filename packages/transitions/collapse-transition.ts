@@ -78,7 +78,7 @@ class Transition {
 // });
 
 import { Component } from "vue-property-decorator";
-import AlbatroUIComponent from "~/AlbatroUIComponent";
+import AlbatroUIComponent from "packages/AlbatroUIComponent";
 
 @Component({
   name: "AlCollapseTransition"

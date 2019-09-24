@@ -1,4 +1,4 @@
-import AlTable from "~/table/src/table.vue";
+import AlTable from "packages/table/src/table.vue";
 
 /* istanbul ignore next */
 AlTable.install = function(Vue) {

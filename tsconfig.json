@@ -22,6 +22,9 @@
       "~/*": [
         "packages/*"
       ],
+      "packages/*": [
+        "packages/*"
+      ],
       "main/*": [
         "src/*"
       ],

@@ -1,4 +1,4 @@
-import AlMain from "~/container/src/main";
+import AlMain from "packages/container/src/main";
 
 /* istanbul ignore next */
 AlMain.install = function(Vue) {

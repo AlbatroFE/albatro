@@ -1,4 +1,4 @@
-import AlContainer from "~/container/src/container";
+import AlContainer from "packages/container/src/container";
 
 /* istanbul ignore next */
 AlContainer.install = function(Vue) {

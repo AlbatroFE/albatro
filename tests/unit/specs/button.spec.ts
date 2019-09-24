@@ -1,5 +1,5 @@
 import { shallowMount, mount } from "@vue/test-utils";
-import Button from "~/button/src/button.vue";
+import Button from "packages/button/src/button.vue";
 
 describe("Button", () => {
   it("mount", () => {

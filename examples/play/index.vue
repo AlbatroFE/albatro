@@ -41,8 +41,8 @@
 <script lang="ts">
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
-import { TzSuperFormGroup, TzSuperFormType, getFormDesc, TzSuperOptionSchema } from "../../packages/super-form/src/schema/TzSuperFormSchema";
-import { FieldTypeEnum } from "../../packages/super-form/src/schema/GridSchema";
+import { TzSuperFormGroup, TzSuperFormType, getFormDesc, TzSuperOptionSchema } from "packages/utils/schema/TzSuperFormSchema";
+import { FieldTypeEnum } from "packages/utils/schema/GridSchema";
 
 @Component({
     props: [],
