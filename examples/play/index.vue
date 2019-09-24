@@ -47,7 +47,6 @@ import { FieldTypeEnum } from "packages/utils/schema/GridSchema";
 @Component({
     props: [],
     components: {
-        //JsonEditor: require('./components/TzSuperJsonEditor.vue.html'),
     },
     watch: {
         formData: {

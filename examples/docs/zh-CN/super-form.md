@@ -858,5 +858,3 @@ export default {
 |---------|----------|---------|-------------|--------|
 | remote | 远程地址 | string | — | — |
 | schema | 数据schema，例如：[{field: "RowNumber", title: "序号", width: "8%", filterable: false, sortable: false, editable: false, menu: false, type: "number", index: 0}],对应的字段表示：field: <字段key>, title: <字段显示名>, width: <占用宽度百分比>, filterable: <是否能过滤>, sortable: <是否能排序>, editable: <是否可编辑>, menu: <是否启用菜单>, type: <字段类型>, index: <显示顺序>} | [] | — | — |
-
-

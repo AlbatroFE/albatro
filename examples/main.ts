@@ -7,15 +7,15 @@ import "@/assets/styles/common.scss";
 import "@/assets/styles/fonts/style.css";
 
 import demoBlock from "@/components/demo-block.vue";
-import MainFooter from "@/components/footer.vue";
-import MainHeader from "@/components/header.vue";
 import SideNav from "@/components/side-nav.vue";
+import MainHeader from "@/components/header.vue";
 import FooterNav from "@/components/footer-nav.vue";
+import MainFooter from "@/components/footer.vue";
 Vue.component("demo-block", demoBlock);
-Vue.component("main-footer", MainFooter);
-Vue.component("main-header", MainHeader);
 Vue.component("side-nav", SideNav);
+Vue.component("main-header", MainHeader);
 Vue.component("footer-nav", FooterNav);
+Vue.component("main-footer", MainFooter);
 
 import Element from "element-ui";
 Vue.use(Element);

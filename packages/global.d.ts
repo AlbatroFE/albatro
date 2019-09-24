@@ -1,11 +1,3 @@
-declare module "vue-codemirror" {
-    //xexport function a():void
-}
-
-declare module "v-jsoneditor" {
-
-}
-
 declare module 'main/locale' {
     export function use(l: any): void;
 

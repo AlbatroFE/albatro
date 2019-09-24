@@ -2,16 +2,6 @@
 
 本节将介绍如何在项目中使用 Albatro。
 
-<!-- ### 使用 vue-cli@3
-
-我们为新版的 vue-cli 准备了相应的 [Albatro 插件](https://github.com/AlbatroUI/vue-cli-plugin-albatro)，你可以用它们快速地搭建一个基于 Albatro 的项目。 -->
-
-<!-- ### 使用 Starter Kit
-
-我们提供了通用的[项目模板](https://github.com/AlbatroUI/albatro-starter)，你可以直接使用。对于 Laravel 用户，我们也准备了相应的[模板](https://github.com/AlbatroUI/albatro-in-laravel-starter)，同样可以直接下载使用。
-
-如果不希望使用我们提供的模板，请继续阅读。 -->
-
 ### 引入 Albatro
 
 你可以引入整个 Albatro，或是根据需要仅引入部分组件。我们先介绍如何引入完整的 Albatro。
@@ -123,12 +113,4 @@ Vue.use(Button);
 ### 开始使用
 
 至此，一个基于 Vue 和 Albatro 的开发环境已经搭建完毕，现在就可以编写代码了。各个组件的使用方法请参阅它们各自的文档。
-
-<!-- ### 使用 Nuxt.js
-
-我们还可以使用 [Nuxt.js](https://nuxtjs.org)：
-
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
-  <iframe src="https://glitch.com/embed/#!/embed/nuxt-with-albatro?path=nuxt.config.js&previewSize=0&attributionHidden=true" alt="nuxt-with-albatro on glitch" style="height: 100%; width: 100%; border: 0;"></iframe>
-</div> -->
 

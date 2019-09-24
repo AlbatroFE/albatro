@@ -76,8 +76,6 @@
 <script lang='ts'>
 import Vue from "vue";
 import { Component, Prop, Watch } from "vue-property-decorator";
-
-//import { Form, FormItem, Input, Row, Col, Collapse, CollapseItem, InputNumber, Pagination, Tooltip, Loading, Message } from "element-ui";
 import { Input, Pagination, Tooltip, Loading, Message } from "element-ui";
 
 import {
@@ -94,13 +92,6 @@ import { TzFetch } from "packages/utils/extension/TzFetch";
 import { TzMessageConst, TzConst } from "packages/utils/extension/TzCommon";
 import "packages/utils/extension/StringExtensions";
 
-// Vue.use(Form);
-// Vue.use(FormItem);
-// Vue.use(Row);
-// Vue.use(Col);
-// Vue.use(InputNumber);
-// Vue.use(Collapse);
-// Vue.use(CollapseItem);
 Vue.use(Tooltip);
 Vue.use(Loading);
 Vue.use(Input);

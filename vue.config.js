@@ -27,23 +27,17 @@ module.exports = {
         { 'vue': 'Vue' }, 
         { 'element-ui': 'ELEMENT' }, 
         { 'highlight.js': 'hljs' }, 
-        //{ 'jQuery': 'jQuery' }, 
         { 'algoliasearch': 'algoliasearch' },
         { '@progress/kendo-ui': 'kendo' }
       ];
 
       // https://webpack.js.org/plugins/uglifyjs-webpack-plugin/#chunkfilter
       config.optimization.minimizer[0].options.chunkFilter = (chunk) => {
-        // Exclude uglification for the `vendor` chunk
-        // if (chunk.name === 'chunk-vendors') {
-        //   return true;
-        // }
-
         if (chunk.name === 'index') {
           return false;
         }
 
-        // console.log("test:chunk: " + chunk.name)
+        //name: chunk-vendors
         return true;
       };
     }
