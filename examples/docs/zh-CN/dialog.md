@@ -94,7 +94,6 @@
                 done();
             }
         }).then(action => {
-            debugger
             this.$messages.info('action: ' + action);
         }).catch(e => {
             this.$messages.info('取消操作');

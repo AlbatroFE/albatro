@@ -98,10 +98,10 @@ Vue.use(Input);
 Vue.use(Pagination);
 
 @Component({
-  name: "AlTableDynamic",
+  name: "AlTable",
   props: ["fetchUrl", "columns", "pageSize", "queryParameters", "errorFn"]
 })
-export default class AlTableDynamic extends Vue {
+export default class AlTable extends Vue {
   @Prop({ default: "", type: String }) private fetchUrl!: string;
   @Prop({ default: [], type: [] }) private columns!: GridColumnSchema[];
   @Prop({ default: 10, type: Number }) private pageSize!: number;
@@ -128,25 +128,27 @@ export default class AlTableDynamic extends Vue {
         this.request.filter = filter;
       }
 
-      this.loading = true;
-      TzFetch.Post(this.fetchUrl, this.request, false)
-        .then((data: any) => {
-          if (data) {
-            this.model = data.Data;
-            this.dataSource = data.Data;
-            this.total = data.Total;
-            this.onDataBinding(this.dataSource);
-          } else {
-            this.dataSource = [];
-            this.total = 0;
-          }
+      if (this.fetchUrl) {
+        this.loading = true;
+        TzFetch.Post(this.fetchUrl, this.request, false)
+          .then((data: any) => {
+            if (data) {
+              this.model = data.Data;
+              this.dataSource = data.Data;
+              this.total = data.Total;
+              this.onDataBinding(this.dataSource);
+            } else {
+              this.dataSource = [];
+              this.total = 0;
+            }
 
-          this.loading = false;
-        })
-        .catch(err => {
-          this.loading = false;
-          this.onError(err);
-        });
+            this.loading = false;
+          })
+          .catch(err => {
+            this.loading = false;
+            this.onError(err);
+          });
+      }
     },
     onDataBinding(data: any) {
       var page = this.request.page;
@@ -156,6 +158,12 @@ export default class AlTableDynamic extends Vue {
       });
     }
   };
+
+  created() {
+    if (!this.fetchUrl) {
+      this.errorFn("the fetch url is not empty");
+    }
+  }
 
   get dataSource() {
     return this.customDataSource.dataSource;
@@ -170,7 +178,8 @@ export default class AlTableDynamic extends Vue {
   }
 
   get remoteUrl() {
-    return this.queryParameters ? `${this.fetchUrl}?${encodeQueryData(this.queryParameters)}` : this.fetchUrl;
+    var query_url_parameters = encodeQueryData(this.queryParameters);
+    return query_url_parameters ? `${this.fetchUrl}?${query_url_parameters}` : this.fetchUrl;
   }
 
   get dynamicColumns() {
@@ -205,7 +214,10 @@ export default class AlTableDynamic extends Vue {
     return this.columns;
   }
 
-  private toFormat(formatter: Function | string | undefined | null, data: string) {
+  private toFormat(
+    formatter: Function | string | undefined | null,
+    data: string
+  ) {
     if (typeof formatter === "function") {
       return formatter(data);
     } else if (typeof formatter === "string") {
@@ -255,19 +267,26 @@ export default class AlTableDynamic extends Vue {
   }
 
   @Watch("queryParameters", { immediate: true, deep: true })
-  onFetchUrlParametersChanged(newVal: IUrlParameterSchema, oldVal: IUrlParameterSchema) {
+  onFetchUrlParametersChanged(
+    newVal: IUrlParameterSchema,
+    oldVal: IUrlParameterSchema
+  ) {
     this.onRequest();
   }
 
   private onRequest() {
-    this.customDataSource.fetchUrl = this.fetchUrl + "?" + encodeQueryData(this.queryParameters);
+    var query_url_parameters = encodeQueryData(this.queryParameters);
+    this.customDataSource.fetchUrl = query_url_parameters ? `${this.fetchUrl}?${query_url_parameters}` : this.fetchUrl;
     this.customDataSource.filter();
   }
 
-  onReRequest(queryParameters: IUrlParameterSchema, isClearSearch: boolean = true
+  onReRequest(
+    queryParameters: IUrlParameterSchema,
+    isClearSearch: boolean = true
   ) {
-    this.customDataSource.fetchUrl =
-      this.fetchUrl + "?" + encodeQueryData(queryParameters);
+    var query_url_parameters = encodeQueryData(this.queryParameters);
+    this.customDataSource.fetchUrl = query_url_parameters ? `${this.fetchUrl}?${query_url_parameters}` : this.fetchUrl;
+    
     if (isClearSearch) {
       this.customDataSource.filter({});
     } else {

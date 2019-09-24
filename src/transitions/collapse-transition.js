@@ -2,7 +2,6 @@ import { addClass, removeClass } from "albatro-ui/src/utils/dom";
 
 class Transition {
   beforeEnter(el) {
-    debugger
     addClass(el, "collapse-transition");
     if (!el.dataset) el.dataset = {};
 
@@ -15,7 +14,6 @@ class Transition {
   }
 
   enter(el) {
-    debugger
     el.dataset.oldOverflow = el.style.overflow;
     if (el.scrollHeight !== 0) {
       el.style.height = el.scrollHeight + "px";
@@ -31,7 +29,6 @@ class Transition {
   }
 
   afterEnter(el) {
-    debugger
     // for safari: remove class then reset height is necessary
     removeClass(el, "collapse-transition");
     el.style.height = "";
@@ -39,7 +36,6 @@ class Transition {
   }
 
   beforeLeave(el) {
-    debugger
     if (!el.dataset) el.dataset = {};
     el.dataset.oldPaddingTop = el.style.paddingTop;
     el.dataset.oldPaddingBottom = el.style.paddingBottom;
@@ -50,7 +46,6 @@ class Transition {
   }
 
   leave(el) {
-    debugger
     if (el.scrollHeight !== 0) {
       // for safari: add class after set height, or it will jump to zero height suddenly, weired
       addClass(el, "collapse-transition");
@@ -61,7 +56,6 @@ class Transition {
   }
 
   afterLeave(el) {
-    debugger
     removeClass(el, "collapse-transition");
     el.style.height = "";
     el.style.overflow = el.dataset.oldOverflow;
