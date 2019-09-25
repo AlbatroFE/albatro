@@ -90,7 +90,8 @@ import {
 import {
   GridModelSchema,
   GridModelSchemaType,
-  GridColumnSchema
+  GridColumnSchema,
+  FieldTypeEnum
 } from "packages/utils/schema/GridSchema";
 import KendoExtension from "packages/utils/extension/KendoExtensions";
 import "packages/utils/extension/StringExtensions";
@@ -136,6 +137,20 @@ export default class AlGrid extends Vue {
   }
 
   get dynamicColumns() {
+    this.columns
+      .filter(x => x.type === FieldTypeEnum.Command)
+      .forEach((e, i) => {
+        if (e.command && e.command.length) {
+          e.command.forEach(c => {
+            var click = c.click;
+            c.click = e => {
+              var data = this.kendoHelper.getRowData(e);
+              click(data);
+            };
+          });
+        }
+      });
+
     return this.columns;
   }
 

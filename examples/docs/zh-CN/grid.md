@@ -24,7 +24,52 @@
     data() {
       return {
         fetchUrl: 'https://demos.telerik.com/kendo-ui/service/Products',
-        columns: [
+        pageSize: 10,
+        queryParameters: {
+          
+        },
+      }
+    },
+    methods: {
+        onError(e) {
+            console.error(e);
+        },
+        edit(data) {this.$dialog.alert('编辑？'+ data.ProductName)
+        },
+        submit(data) {
+          this.$messages.info(JSON.stringify(data, null, '  '))
+        }
+    },
+    computed: {
+      commands() {
+        var commands = [
+              {
+                  name: "Edit",
+                  text: "",
+                  title: "編輯",
+                  className: "c-grid-menu c-grid-menu--mini c-grid-menu-" + "primary",
+                  click: this.edit,
+                  //visible: function(dataItem) { return dataItem.name },
+                  iconClass: "el-icon-edit"
+              },
+          ];
+
+          // var result = commands.map((item, index) =>
+          //   Object({
+          //     name: item.name,
+          //     text: item.text,
+          //     title: item.title,
+          //     className: item.className,
+          //     click: item.click,
+          //     visible: item.visible,
+          //     iconClass: item.iconClass
+          //   })
+          // );
+
+          return commands;
+      },
+      columns() {
+        return [
           {
             field: "RowNumber",
             title: "序号",
@@ -98,77 +143,22 @@
             values: null
           },          
           {
-            title: "",
+            title: "操作",            
             filterable: false,
             sortable: false,
             editable: false,
-            menu:false,
-            commmand: [
-                {
-                  name: "edit",
-                  text: '',
-                  title: "编辑",
-                  className: "c-grid-menu c-grid-menu--mini c-grid-menu-" + "edit",
-                  click: this.edit,
-                  visible: function (dataItem) {
-                      return true;
-                  },
-                  iconClass: "fa fa-table",
-                  index: 1
-                }
-            ],
             type: "command",
-            width: "15%",
+            menu:false,
+            command: this.commands,
+            width: "15%",            
             index: 99
           }
-        ],
-        pageSize: 10,
-        queryParameters: {
-          
-        },
+        ]
       }
     },
-    methods: {
-        onError(e) {
-            console.error(e);
-        },
-        edit(data) {
-          this.$dialog.alert('编辑？'+ data.ProductName)
-        },
-        submit(data) {
-          this.$messages.info(JSON.stringify(data, null, '  '))
-        },
-        formatPrice(data) {
-            return this.formatMoney("{0:N3}", data, "￥")
-        },
-        formatMoney(format, data, culture) {
-          debugger;
-          var money = parseFloat(data);
-          if (isNaN(money)) {
-              return data;
-          }
-
-          var moneyStr = money.toFixed(format);
-          var integer = moneyStr.split('.')[0];
-          var digits = moneyStr.split('.')[1];
-          var result = integer.replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
-          if (format >= 1) {
-              result += `.${digits}`;
-          }
-          
-          return `${culture} ${result}`;
-        }
-    }
   }
 </script>
 
-<style>
-.c-grid-menu-Edit {
-  color: #fff !important;
-  background-color: #39b3d7 !important;
-  border-color: #269abc !important;
-}
-</style>
 ```
 :::
 

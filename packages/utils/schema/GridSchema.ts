@@ -2,15 +2,15 @@ export interface GridCommand {
   name: string;
   title: string;
   text?: string;
-  // route: string;
-  // api: string;
   click: (e?: any) => void;
-  visible: (dataItem: any) => boolean;
-  // param?: any;
-  // is?: boolean;
+  visible: any;
+  param?: any;
+  is?: boolean;
   iconClass?: string;
   className?: string;
-  index?: number;
+  index?: number;  
+  route: string;
+  api: string;
 }
 
 export enum FieldTypeEnum {
@@ -30,11 +30,12 @@ export interface GridColumnSchema {
   editable: boolean;
   type: FieldTypeEnum;
   menu: boolean;
-  format?: string | Function | undefined | null;
+  format?: string | Function;
   command?: GridCommand[];
   index?: number;
   hidden?: boolean;
   values?: any[];
+  fixed?: boolean | string;
 }
 
 export interface GridModelSchemaType {
@@ -56,18 +57,18 @@ export interface GridModelSchema {
 //   visible: any;
 // }
 
-export function bindCommands(commands: Array<GridCommand>) {
-  var result = commands.map((item, index) =>
-    Object({
-      name: item.name,
-      text: "",
-      title: item.title,
-      className: item.name,
-      click: item.click,
-      visible: item.visible,
-      iconClass: item.iconClass
-    })
-  );
+// export function bindCommands(commands: Array<GridCommand>) {
+//   var result = commands.map((item, index) =>
+//     Object({
+//       name: item.name,
+//       text: "",
+//       title: item.title,
+//       className: item.name,
+//       click: item.click,
+//       visible: item.visible,
+//       iconClass: item.iconClass
+//     })
+//   );
 
-  return result;
-}
+//   return result;
+// }
