@@ -38,7 +38,7 @@ export default Al${ComponentName};`
         content: `<template>
   <div class="al-${componentname}"></div>
 </template>
-<script lang='ts'>
+<script lang="ts">
 import { Vue, Component } from "vue-property-decorator"
 @Component
 export default class Al${ComponentName} extends Vue{}

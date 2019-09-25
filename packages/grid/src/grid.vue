@@ -1,6 +1,7 @@
 <template>
   <div class="al-grid">
-    <kendo-datasource v-if="jsonp"
+    <kendo-datasource
+      v-if="jsonp"
       ref="remoteDataSource"
       :type="'jsonp'"
       :transport-read="readData"
@@ -20,7 +21,8 @@
       @error="onError"
     ></kendo-datasource>
 
-    <kendo-datasource v-else
+    <kendo-datasource
+      v-else
       ref="remoteDataSource"
       :type="'json'"
       :transport-read="readData"
@@ -72,6 +74,7 @@ import Vue from "vue";
 import { Component, Prop } from "vue-property-decorator";
 
 import "@progress/kendo-ui";
+import "@progress/kendo-theme-default/dist/all.css";
 
 import { GridInstaller } from "@progress/kendo-grid-vue-wrapper";
 import { DataSourceInstaller } from "@progress/kendo-datasource-vue-wrapper";
@@ -80,8 +83,15 @@ import "@progress/kendo-ui/js/cultures/kendo.culture.zh-CN.js";
 import "@progress/kendo-ui/js/messages/kendo.messages.zh-CN.js";
 kendo.culture("zh-CN");
 
-import {  encodeQueryData,  IUrlParameterSchema } from "packages/utils/extension/TzCommon";
-import {  GridModelSchema,  GridModelSchemaType,  GridColumnSchema } from "packages/utils/schema/GridSchema";
+import {
+  encodeQueryData,
+  IUrlParameterSchema
+} from "packages/utils/extension/TzCommon";
+import {
+  GridModelSchema,
+  GridModelSchemaType,
+  GridColumnSchema
+} from "packages/utils/schema/GridSchema";
 import KendoExtension from "packages/utils/extension/KendoExtensions";
 import "packages/utils/extension/StringExtensions";
 
@@ -96,15 +106,15 @@ export default class AlGrid extends Vue {
   @Prop() private columns!: GridColumnSchema[];
   @Prop({ default: 10, type: Number }) private pageSize!: number;
   @Prop() private queryParameters!: IUrlParameterSchema;
-  @Prop(Function) private errorFn!: Function;  
+  @Prop(Function) private errorFn!: Function;
   @Prop(Boolean) private jsonp!: boolean;
 
-  height: number = 450
+  height: number = 450;
 
   schemaModelField: GridModelSchema = {};
   dataSource: any = {};
 
-  kendoHelper: KendoExtension = new KendoExtension((kendo as any).jQuery)
+  kendoHelper: KendoExtension = new KendoExtension((kendo as any).jQuery);
 
   get schemaModelFields() {
     this.schemaModelField = {};

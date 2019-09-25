@@ -26,7 +26,6 @@ Vue.use(Input);
 })
 export default class TzSuperTextarea extends Vue {
   @Prop() desc!: any;
-  
   update(value: string) {
     this.$emit("change", value);
   }

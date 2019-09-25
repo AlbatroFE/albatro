@@ -30,11 +30,11 @@
         >
           <template slot-scope="scope">
             <el-input
-              v-if="(col.editable && scope.row['RowEditable'] === undefined) || (col.editable && scope.row['RowEditable'])"
+              v-if="col.editable && scope.row['RowEditable']"
               v-model="scope.row[col.field]"
               size="medium"
             />
-            <span v-else>{{toFormat(col.format, scope.row[col.field])}}</span>
+            <span v-else>{{ toFormat(col.format, scope.row[col.field]) }}</span>
           </template>
         </el-table-column>
         <el-table-column
@@ -45,7 +45,7 @@
         >
           <template slot-scope="scope">
             <el-button
-              v-for="comd in col['commmand'].filter(x=> x.visible(scope.row))"
+              v-for="comd in col['commmand'].filter(x => x.visible(scope.row))"
               :key="comd.name"
               size="mini"
               @click="comd.click(scope.row)"
@@ -73,7 +73,7 @@
     </div>
   </div>
 </template>
-<script lang='ts'>
+<script lang="ts">
 import Vue from "vue";
 import { Component, Prop, Watch } from "vue-property-decorator";
 import { Input, Pagination, Tooltip, Loading, Message } from "element-ui";
