@@ -818,8 +818,6 @@ export default {
 | class | 绑定class | string | — | — |
 | style | 绑定style | string | — | — |
 | on | 绑定事件，最终通过v-on传递，具体参考element-ui文档 | any | — | — |
-<!-- | valueFormatter | 行名称 | string | — | — | -->
-
 
 ### Form Field Option Attributes (Autocomplete Basic)
 | 参数    | 说明     | 类型    | 可选值      | 默认值 |
