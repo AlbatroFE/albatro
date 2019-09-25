@@ -14,11 +14,18 @@ export interface CustomDataSource {
     request: DataSourceRequest;
     dataSource: any[];
     model: any[];
+    jsonp?: CustomJsonpSource;
     total: number;
     extra?: any;
     filter: (filter?: any) => void;
     onDataBinding: (data: any) => void;
     onError: Function;
+}
+
+export interface CustomJsonpSource {
+    timeout?: number;
+    server?: boolean;
+    callbackFunction?: string;
 }
 
 let customSearch: any = {

@@ -1,6 +1,26 @@
 <template>
   <div class="al-grid">
-    <kendo-datasource
+    <kendo-datasource v-if="jsonp"
+      ref="remoteDataSource"
+      :type="'jsonp'"
+      :transport-read="readData"
+      :transport-read-data-type="'jsonp'"
+      :transport-read-type="'POST'"
+      :schema-model-id="'id'"
+      :transport-parameter-map="parameterMap"
+      transport-read-content-type="application/json"
+      :schema-model-fields="schemaModelFields"
+      :page-size="pageSize"
+      :server-paging="false"
+      :server-operation="true"
+      :server-sorting="false"
+      :server-filtering="false"
+      :server-aggregates="true"
+      :request-start="requestStart"
+      @error="onError"
+    ></kendo-datasource>
+
+    <kendo-datasource v-else
       ref="remoteDataSource"
       :type="'json'"
       :transport-read="readData"
@@ -69,16 +89,17 @@ Vue.use(GridInstaller);
 Vue.use(DataSourceInstaller);
 
 @Component({
-  props: ["fetchUrl", "columns", "pageSize", "queryParameters", "errorFn"]
+  name: "AlGrid"
 })
 export default class AlGrid extends Vue {
   @Prop({ default: "", type: String }) private fetchUrl!: string;
-  @Prop({ default: [], type: [] }) private columns!: GridColumnSchema[];
+  @Prop() private columns!: GridColumnSchema[];
   @Prop({ default: 10, type: Number }) private pageSize!: number;
   @Prop() private queryParameters!: IUrlParameterSchema;
-  @Prop(Function) private errorFn!: Function;
+  @Prop(Function) private errorFn!: Function;  
+  @Prop(Boolean) private jsonp!: boolean;
 
-  height: number = 445
+  height: number = 450
 
   schemaModelField: GridModelSchema = {};
   dataSource: any = {};
