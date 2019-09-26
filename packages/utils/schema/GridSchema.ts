@@ -8,7 +8,7 @@ export interface GridCommand {
   is?: boolean;
   iconClass?: string;
   className?: string;
-  index?: number;  
+  index?: number;
   route: string;
   api: string;
 }
@@ -49,26 +49,3 @@ export interface GridModelSchemaType {
 export interface GridModelSchema {
   [key: string]: GridModelSchemaType;
 }
-
-// interface CommandInfo {
-//   name: string;
-//   title: string;
-//   action: any;
-//   visible: any;
-// }
-
-// export function bindCommands(commands: Array<GridCommand>) {
-//   var result = commands.map((item, index) =>
-//     Object({
-//       name: item.name,
-//       text: "",
-//       title: item.title,
-//       className: item.name,
-//       click: item.click,
-//       visible: item.visible,
-//       iconClass: item.iconClass
-//     })
-//   );
-
-//   return result;
-// }

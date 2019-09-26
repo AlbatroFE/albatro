@@ -1,4 +1,4 @@
-## Grid 动态列表（正在完善）
+## Grid 动态列表
 
 用于动态展示多条结构类似的数据，可对数据进行自定义操作。
 
@@ -9,7 +9,7 @@
 :::demo 当`al-grid`元素中注入`fetchUrl`,`columns`等属性后，Table 可自动获取数据并自动填充数据。
 ```html
 <template>
-  <al-grid :fetchUrl="fetchUrl" :columns="columns" :pageSize="pageSize" :queryParameters="queryParameters" :error-fn="onError" jsonp>
+  <al-grid :fetchUrl="fetchUrl" :columns="columns" :pageSize="pageSize" :queryParameters="queryParameters" :error-fn="onError" jsonp :id-key="'ProductID'">
     <template slot="toolbar" slot-scope="dataSource">
       <div style="text-align:right;margin: 0px 0px 20px 0px;">
         <el-button type="success" @click="submit(dataSource)">提交</el-button>
@@ -34,37 +34,39 @@
         onError(e) {
             console.error(e);
         },
-        edit(data) {this.$dialog.alert('编辑？'+ data.ProductName)
+        edit(data) {
+          this.$dialog.alert('编辑：'+ data.ProductName)
+        },
+        detail(data) {
+          this.$dialog.alert('查看：'+ data.ProductName)
         },
         submit(data) {
-          this.$messages.info(JSON.stringify(data, null, '  '))
+          console.log("data:" + JSON.stringify(data.dataSource.kendoDataSource.data(), null, '  '))
+          this.$messages.info("信息已打印，請查看控制台", true)
         }
     },
     computed: {
       commands() {
         var commands = [
               {
+                  name: "Detail",
+                  text: "",
+                  title: "編輯",
+                  className: "al-grid--menu al-grid--menu--mini al-grid--menu-detail",
+                  click: this.detail,
+                  visible: function(dataItem) { return dataItem },
+                  iconClass: "el-icon-view"
+              },
+              {
                   name: "Edit",
                   text: "",
                   title: "編輯",
-                  className: "c-grid-menu c-grid-menu--mini c-grid-menu-" + "primary",
+                  className: "al-grid--menu al-grid--menu--mini al-grid--menu-edit",
                   click: this.edit,
-                  //visible: function(dataItem) { return dataItem.name },
+                  visible: function(dataItem) { return dataItem && dataItem.UnitsInStock > 6 },
                   iconClass: "el-icon-edit"
-              },
+              }
           ];
-
-          // var result = commands.map((item, index) =>
-          //   Object({
-          //     name: item.name,
-          //     text: item.text,
-          //     title: item.title,
-          //     className: item.className,
-          //     click: item.click,
-          //     visible: item.visible,
-          //     iconClass: item.iconClass
-          //   })
-          // );
 
           return commands;
       },
@@ -83,6 +85,21 @@
             commmand: null,
             index: 0,
             hidden: false,
+            values: null
+          }, 
+          {
+            field: "ProductID",
+            title: "商品ID",
+            width: "250px",
+            filterable: true,
+            sortable: true,
+            editable: false,
+            type: "string",
+            menu: true,
+            format: null,
+            commmand: null,
+            index: 1,
+            hidden: true,
             values: null
           }, 
           {
@@ -108,7 +125,7 @@
             editable: false,
             type: "number",
             menu:true,
-            format: "${0:N3}",
+            format: "￥{0:N3}",
             commmand: null,
             index: 0,
             hidden: false,
@@ -150,6 +167,7 @@
             type: "command",
             menu:false,
             command: this.commands,
+            //command: [{ name: "edit", visible: function(dataItem) { return true } }],
             width: "15%",            
             index: 99
           }
@@ -171,6 +189,8 @@
 | queryParameters | 请求地址参数，例如token  | 键值对，参考IUrlParameterSchema | — | — |
 | error-fn | 请求错误的回调  | Function | — | — |
 | jsonp | 是否以jsonp跨域方式请求数据, 注意：此方式访问数据不支持服务器端分页，过滤等  | boolean | — | false |
+| id-key | 作为id的键名称  | string | — | id |
+| height | grid列表高度  | string | '450'/'450px'/'30em'/'auto' | '450' |
 
 ### Grid Events
 | 事件名称 | 说明 | 回调参数 |
@@ -200,6 +220,10 @@
 | hidden | 是否隐藏列 | boolean | — | false |
 | values | 当type为enums枚举时，设置有效，枚举对应显示名称，暂时不支持，后续完善 | | — | — |
 
+
+:::tip
+以上所有属性中请勿填写特殊字符，例如$符号。特殊字符可能会导致渲染模板失败。
+:::
 
 ### GridCommand
 

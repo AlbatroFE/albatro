@@ -1,6 +1,17 @@
 .demo-block.demo-grid {
+    .demo-grid{
+        
+    }
 
-}
-.demo-grid{
+    & .al-grid--menu-edit {
+        color: #fff !important;
+        background-color: #39b3d7 !important;
+        border-color: #269abc !important;
+    }
 
+    & .al-grid--menu-detail {
+        color: #fff!important;
+        background-color: #5cb85c!important;
+        border-color: #4cae4c!important;
+    }
 }

@@ -17,3 +17,5 @@
 
 /packages/index.ts
 
+/packages/utils/extension/KendoExtensions.ts
+

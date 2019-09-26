@@ -1,119 +1,61 @@
 import TzRequest from "./TzRequest";
 
 export default class KendoExtension {
-    private kendoJQuery: any;
+  private kendoJQuery: any;
 
-    constructor(kendoJQuery: any) {
-        this.kendoJQuery = kendoJQuery;
+  constructor(kendoJQuery: any) {
+    this.kendoJQuery = kendoJQuery;
+  }
+
+  public onDataBound(e: any) {
+    e.sender.element
+      .data("kendoGrid").thead
+      .find("[data-field=RowNumber]>.k-header-column-menu").remove();
+  }
+
+  public onDataBinding(e: any) {
+    var page = e.sender.pager.page();
+    var pageSize = e.sender.pager.pageSize();
+    e.items.forEach((ele: any, i: number) => {
+      ele.RowNumber = (page - 1) * pageSize + i + 1;
+    });
+  }
+
+  public onBeforeSend(xhr: any) {
+    return new Promise((resolve, reject) => {});
+  }
+
+  public onSearch(dataSource: any, schema: any, textSearch: string) {
+    let filter = TzRequest.onRequest(schema, textSearch);
+    if (dataSource && dataSource.kendoDataSource) {
+      dataSource.kendoDataSource.filter(filter.filter);
     }
+  }
 
-    public onDataBound (e: any) {
-        e.sender.element.data("kendoGrid").thead.find("[data-field=RowNumber]>.k-header-column-menu").remove();
-    }
+  public dataItem(e: any) {
+    var grid = this.kendoJQuery(e.delegateTarget).data("kendoGrid");
+    var tr = this.kendoJQuery(e.currentTarget).closest("tr");
+    var data = grid.dataItem(tr);
+    return data;
+  }
 
-    public  onDataBinding (e: any) {
-        var page = e.sender.pager.page()
-        var pageSize = e.sender.pager.pageSize()
-        e.items.forEach((ele:any, i:number) => {
-            ele.RowNumber = (page - 1) * pageSize + i + 1
-        });
-    }
-
-    public  onBeforeSend(xhr: any) {
-        return new Promise((resolve, reject) => { });
-    }
-
-    public  onSearch (dataSource: any, schema: any, textSearch: string) {
-        let filter = TzRequest.onRequest(schema, textSearch)
-        if (dataSource && dataSource.kendoDataSource) {
-            dataSource.kendoDataSource.filter(filter.filter)
+  public onRowDoubleClick(e: any, callback: any) {
+    var that = this;
+    e.sender.element
+      .data("kendoGrid").element
+      .undelegate("tbody tr[data-uid]", "dblclick");
+    e.sender.element
+      .data("kendoGrid").element
+      .on("dblclick", "tbody tr[data-uid]", function (ev:any) {
+        if (callback) {
+          callback(e.sender.element.data("kendoGrid").dataItem(that.kendoJQuery(ev.target).closest("tr")));
         }
-    }
+    });
+  }
 
-    // public  onRefresh (dataSource: any, params: any = {}) {
-    //     if (dataSource && dataSource.kendoDataSource) {
-    //         dataSource.kendoDataSource.read(params);
-    //     } else {
-    //         let grid: TzGridDynamic = dataSource as TzGridDynamic
-    //         if (grid) {
-    //             (grid as any).dataSource.kendoDataSource.read(params)
-    //         }
-    //     }
-    // }
-
-    public  dataItem (e: any) {
-        var grid = this.kendoJQuery(e.delegateTarget).data("kendoGrid")
-        var tr = this.kendoJQuery(e.currentTarget).closest('tr')
-        var data = grid.dataItem(tr)
-        return data
-    }
-
-    public onRowDoubleClick (e: any, callback: any) {
-        var that = this;
-        e.sender.element.data("kendoGrid").element.undelegate("tbody tr[data-uid]", "dblclick");
-        e.sender.element.data("kendoGrid").element.on('dblclick', 'tbody tr[data-uid]', function (ev:any) {
-            if (callback) {
-                callback(e.sender.element.data("kendoGrid").dataItem(that.kendoJQuery(ev.target).closest('tr')))
-            }
-        })
-    }
-
-    public getRowData(e: any) {
-        var data = this.dataItem(e)
-        e.preventDefault();
-        return data;
-    }    
+  public getRowData(e: any) {
+    var data = this.dataItem(e);
+    e.preventDefault();
+    return data;
+  }
 }
-
-// var kendoExtensions = {
-//     onDataBound: function (e: any) {
-//         e.sender.element.data("kendoGrid").thead.find("[data-field=RowNumber]>.k-header-column-menu").remove();
-//     },
-//     onDataBinding: function (e: any) {
-//         var page = e.sender.pager.page()
-//         var pageSize = e.sender.pager.pageSize()
-//         e.items.forEach((ele:any, i:number) => {
-//             ele.RowNumber = (page - 1) * pageSize + i + 1
-//         });
-//     },
-//     onBeforeSend: function (xhr: any) {
-//         return new Promise((resolve, reject) => { });
-//     },
-//     onSearch: function (dataSource: any, schema: any, textSearch: string) {
-//         let filter = TzRequest.onRequest(schema, textSearch)
-//         if (dataSource && dataSource.kendoDataSource) {
-//             dataSource.kendoDataSource.filter(filter.filter)
-//         }
-//     },
-//     // onRefresh: function (dataSource: any, params: any = {}) {
-//     //     if (dataSource && dataSource.kendoDataSource) {
-//     //         dataSource.kendoDataSource.read(params);
-//     //     } else {
-//     //         let grid: TzGridDynamic = dataSource as TzGridDynamic
-//     //         if (grid) {
-//     //             (grid as any).dataSource.kendoDataSource.read(params)
-//     //         }
-//     //     }
-//     // },
-//     // dataItem: function (e: any) {
-//     //     var grid = kendoJQuery(e.delegateTarget).data("kendoGrid")
-//     //     var tr = kendoJQuery(e.currentTarget).closest('tr')
-//     //     var data = grid.dataItem(tr)
-//     //     return data
-//     // },
-//     // onRowDoubleClick: function (e: any, callback: any) {
-//     //     e.sender.element.data("kendoGrid").element.undelegate("tbody tr[data-uid]", "dblclick");
-//     //     e.sender.element.data("kendoGrid").element.on('dblclick', 'tbody tr[data-uid]', function (ev:any) {
-//     //         if (callback) {
-//     //             callback(e.sender.element.data("kendoGrid").dataItem(kendoJQuery(ev.target).closest('tr')))
-//     //         }
-//     //     })
-//     // },
-//     // getRowData(e: any) {
-//     //     var data = this.dataItem(e)
-//     //     e.preventDefault();
-//     //     return data;
-//     // }    
-// }
-
-// export default kendoExtensions

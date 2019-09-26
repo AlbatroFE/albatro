@@ -2,40 +2,35 @@
 @import "common/var";
 
 @include b(grid) {
-    
-  & .c-grid-menu {
-        line-height: 0em !important;
-        display: inline-block !important;
-        white-space: nowrap !important;
-        cursor: pointer !important;
-        background: #fff !important;
-        border: 0px solid #dcdfe6 !important;
-        color: #606266 !important;
-        -webkit-appearance: none !important;
-        text-align: center !important;
-        box-sizing: border-box !important;
-        outline: none !important;
-        margin: 0 !important;
-        transition: 0.1s !important;
-        font-weight: 500 !important;
-        -moz-user-select: none !important;
-        -webkit-user-select: none !important;
-        -ms-user-select: none !important;
-        padding: 12px 20px !important;
-        font-size: 14px !important;
-        border-radius: 0px !important;
-        max-width: 32px !important;
-        min-width: 32px !important;
-        height: 26px !important;
-        background-position: 100% !important;
-    }
-  
-  & .c-grid-menu--mini {
-        padding: 7px 6px !important;
-        font-size: 12px !important;
-    }
-  
-  & .c-grid-menu [class^="fa fa-"] {
+  min-height: 450px;
+
+  @include m(menu) {
+    line-height: 0em !important;
+    display: inline-block !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    background: #fff !important;
+    border: 0px solid #dcdfe6 !important;
+    color: #606266 !important;
+    -webkit-appearance: none !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    outline: none !important;
+    // margin: 0 0 !important;
+    transition: 0.1s !important;
+    font-weight: 500 !important;
+    -moz-user-select: none !important;
+    -webkit-user-select: none !important;
+    -ms-user-select: none !important;
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+    border-radius: 0px !important;
+    max-width: 32px !important;
+    min-width: 32px !important;
+    height: 26px !important;
+    background-position: 100% !important;
+
+    & [class^="fa fa-"] {
         speak: none !important;
         font-style: normal !important;
         font-weight: 400 !important;
@@ -48,9 +43,9 @@
         -moz-osx-font-smoothing: grayscale !important;
     }
 
-    & .c-grid-menu-primary{        
-      color: #fff !important;
-      background-color: #39b3d7 !important;
-      border-color: #269abc !important;
+    @include m(mini) {
+      padding: 7px 6px !important;
+      font-size: 12px !important;
     }
+  }
 }

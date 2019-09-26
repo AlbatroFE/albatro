@@ -7,7 +7,7 @@
       :transport-read="readData"
       :transport-read-data-type="'jsonp'"
       :transport-read-type="'POST'"
-      :schema-model-id="'id'"
+      :schema-model-id="idKey"
       :transport-parameter-map="parameterMap"
       transport-read-content-type="application/json"
       :schema-model-fields="schemaModelFields"
@@ -28,7 +28,7 @@
       :transport-read="readData"
       :transport-read-data-type="'json'"
       :transport-read-type="'POST'"
-      :schema-model-id="'id'"
+      :schema-model-id="idKey"
       :schema-data="'Data'"
       :transport-parameter-map="parameterMap"
       transport-read-content-type="application/json"
@@ -109,8 +109,8 @@ export default class AlGrid extends Vue {
   @Prop() private queryParameters!: IUrlParameterSchema;
   @Prop(Function) private errorFn!: Function;
   @Prop(Boolean) private jsonp!: boolean;
-
-  height: number = 450;
+  @Prop({ default: "id", type: String }) private idKey!: string;
+  @Prop({ default: '450', type: String }) private height!: string;
 
   schemaModelField: GridModelSchema = {};
   dataSource: any = {};
@@ -139,15 +139,23 @@ export default class AlGrid extends Vue {
   get dynamicColumns() {
     this.columns
       .filter(x => x.type === FieldTypeEnum.Command)
-      .forEach((e, i) => {
-        if (e.command && e.command.length) {
-          e.command.forEach(c => {
+      .forEach((cl, i) => {
+        if (cl.command && cl.command.length) {
+          cl.command.forEach(c => {
             var click = c.click;
             c.click = e => {
               var data = this.kendoHelper.getRowData(e);
               click(data);
             };
           });
+        } else if (cl.command) {
+          var click = (cl.command as any).click;
+          if(click) {
+            (cl.command as any).click = (e: any) => {
+              var data = this.kendoHelper.getRowData(e);
+              click(data);
+            };
+          }
         }
       });
 
