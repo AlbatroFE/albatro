@@ -23,17 +23,17 @@ module.exports = {
 
     if (isPro) {
       config.externals = [
-        { 'vue-router': 'VueRouter' }, 
-        { 'vue': 'Vue' }, 
-        { 'element-ui': 'ELEMENT' }, 
-        { 'highlight.js': 'hljs' }, 
-        { 'algoliasearch': 'algoliasearch' },
-        { '@progress/kendo-ui': 'kendo' }
+        { "vue-router": "VueRouter" },
+        { vue: "Vue" },
+        { "element-ui": "ELEMENT" },
+        { "highlight.js": "hljs" },
+        { algoliasearch: "algoliasearch" },
+        { "@progress/kendo-ui": "kendo" }
       ];
 
       // https://webpack.js.org/plugins/uglifyjs-webpack-plugin/#chunkfilter
-      config.optimization.minimizer[0].options.chunkFilter = (chunk) => {
-        if (chunk.name === 'index') {
+      config.optimization.minimizer[0].options.chunkFilter = chunk => {
+        if (chunk.name === "index") {
           return false;
         }
 
@@ -66,8 +66,7 @@ module.exports = {
       .include.add(/examples/)
       .end();
 
-
-      config.module
+    config.module
       .rule("scss")
       .include.add(/node_modules/)
       .end();

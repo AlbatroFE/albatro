@@ -61,13 +61,13 @@
     "@progress/kendo-vue-grid": "^0.3.4",
     "core-js": "^2.6.5",
     "element-ui": "^2.12.0",
-    "throttle-debounce": "^1.0.1",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
+    "throttle-debounce": "^1.0.1",
     "@types/jest": "^23.1.4",
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",

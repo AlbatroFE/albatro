@@ -9,7 +9,7 @@ module.exports = {
   transformIgnorePatterns: ["/node_modules/"],
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/examples/$1",
-    "^~/(.*)$": "<rootDir>/packages/$1",    
+    "^~/(.*)$": "<rootDir>/packages/$1",
     "^packages/(.*)$": "<rootDir>/packages/$1"
   },
   snapshotSerializers: ["jest-serializer-vue"],

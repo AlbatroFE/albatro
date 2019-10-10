@@ -142,7 +142,7 @@
         v-for="(item, key) in data"
         :key="key">
         <a v-if="!item.path && !item.href" @click="expandMenu">{{item.name}}</a>
-        <a v-if="item.href" :href="item.href" target="_blank">{{item.name}}</a>
+        <a v-if="item.href && item.name" :href="item.href" target="_blank">{{item.name}}</a>
         <router-link
           v-if="item.path"
           active-class="active"

@@ -12,9 +12,10 @@
 
 ```javascript
 import Vue from "vue";
+import App from "./App.vue";
+
 import AlbatroUI from "albatro-ui";
 import 'albatro-ui/lib/theme-albatro/index.css';
-import App from "./App.vue";
 
 Vue.use(AlbatroUI);
 
