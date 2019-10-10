@@ -26,7 +26,7 @@ new Vue({
 ```
 
 以上代码便完成了 Albatro 的引入。需要注意的是，样式文件需要单独引入。
-
+<!-- 
 #### 按需引入
 
 借助 [babel-plugin-component](https://github.com/QingWei-Li/babel-plugin-component)，我们可以只引入需要的组件，以达到减小项目体积的目的。
@@ -109,7 +109,7 @@ Vue.prototype.$ALBATRO = { size: 'small', zIndex: 3000 };
 Vue.use(Button);
 ```
 
-按照以上设置，项目中所有拥有 `size` 属性的组件的默认尺寸均为 'small'，弹框的初始 z-index 为 3000。
+按照以上设置，项目中所有拥有 `size` 属性的组件的默认尺寸均为 'small'，弹框的初始 z-index 为 3000。 -->
 
 ### 开始使用
 

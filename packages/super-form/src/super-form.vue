@@ -105,6 +105,10 @@ import {
   TzSuperFormField,
   getComponentName
 } from "packages/utils/schema/TzSuperFormSchema";
+
+import Element from "element-ui";
+Vue.use(Element);
+
 import { TzFetch } from "packages/utils/extension/TzFetch";
 
 import TzSuperTextarea from "./components/TzSuperTextarea.vue";
@@ -137,6 +141,7 @@ import TzSuperAutocomplete from "./components/TzSuperAutocomplete.vue";
 import TzSuperGrid from "./components/TzSuperGrid.vue";
 
 @Component({
+  name:"AlSuperForm",
   props: [
     "form",
     "formData",
