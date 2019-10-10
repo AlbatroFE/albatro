@@ -1,25 +1,30 @@
 ## 更新日志
 
-### 2.12.0
+### 0.1.0
 
-*2019-10-01*
+*2019-10-10*
 
 #### 新特性
 
+- Layout
+  - 新增布局组件：al-row, al-col
+- Container 
+  - 新增容器组件：al-header, al-footer, al-main, al-aside, al-container
+- Icon
+  - 新增图标组件（基于 element 图标库）
+- Button
+  - 新增按钮组件
 - SuperForm
-  - 新增SuperForm组件
-  - 新增文档说明
+  - 新增超级表单组件（基于 element 基础组件库）
+- Grid
+  - 新增动态列表组件（基于 kendo ui vue grid wrapper 组件）
+- Table
+  - 新增动态表格组件（基于 element table 组件）
+- Message
+  - 新增消息提示组件（基于 element message 组件）
+- Dialog
+  - 新增对话框组件（基于 element messagebox 组件）
+- 文档
+  - 更新组件文档说明
+- 其他
   - 支持Typescript
-
-#### 优化
-
-- Docs
-  - 更新 changelog 
-  - 更新 SuperForm 文档
-- Test
-  - 优化 SuperForm 的单元测试
-- Types
-  - 修复 SuperForm 的类型声明文件
-
-##
-<i><sup>*</sup> 在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 [XSS 攻击](https://en.wikipedia.org/wiki/Cross-site_scripting)。因此请在 `dangerouslyUseHTMLString` 打开的情况下，确保 `message` 的内容是可信的，**永远不要**将用户提交的内容赋值给 `message` 属性。</i>
