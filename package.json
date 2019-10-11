@@ -35,7 +35,7 @@
     "dev:play": "npm run build:file && vue-cli-service serve --mode play && npm run build:template",
     "dist": "npm run clean && npm run build:file && npm run lint && npm run build:utils && npm run build:umd && npm run build:theme && npm run build:lib && npm run build:packages && vue-cli-service build",
     "deploy": "npm run build:deploy && node build/bin/gen-indices.js && sh build/deploy.sh",
-    "pub": "npm run bootstrap && sh build/git-release.sh && sh build/release.sh && sh build/deploy.sh"
+    "pub": "npm run bootstrap && sh build/git-release.sh && sh build/release.sh"
   },
   "repository": {
     "type": "git",
