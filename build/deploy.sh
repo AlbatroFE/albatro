@@ -38,6 +38,10 @@ rm -rf ./albatro/temp_web
 
 echo "deploy gh-pages $SUB_FOLDER"
 cd $GH_PAGES_FOLDER
+
+cp index.html 404.html
+cp $SUB_FOLDER/index.html $SUB_FOLDER/404.html
+
 git add .
 git commit -m "deploy gh-pages $SUB_FOLDER"
 git push origin gh-pages
