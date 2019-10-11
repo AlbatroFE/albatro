@@ -6,8 +6,8 @@ git merge dev
 
 VERSION=`npx select-version-cli`
 
-#read -p "Releasing $VERSION - are you sure? (y/n)" -n 1 -r
-read -p "Releasing $VERSION - are you sure? (y/n)" REPLY
+read -p "Releasing $VERSION - are you sure? (y/n)" -n 1 -r
+#read -p "Releasing $VERSION - are you sure? (y/n)" REPLY
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
