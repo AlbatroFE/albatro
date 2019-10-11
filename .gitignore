@@ -6,6 +6,7 @@ coverage
 examples/pages/zh-CN
 examples/pages/en-US
 packages/theme-albatro/lib
+build/bin/algolia-key.json
 
 # local env files
 .env.local
