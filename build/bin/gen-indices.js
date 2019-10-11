@@ -4,22 +4,22 @@ const fs = require('fs');
 const path = require('path');
 const algoliasearch = require('algoliasearch');
 const slugify = require('transliteration').slugify;
-var key;
+var algolia;
 
 try {
-    key = require('./algolia-key');
+  algolia = require('./algolia-key');
 } catch (error) {
     console.log("error=" + error)
     throw error
 }
 
-const client = algoliasearch('IYCPTJKTZV', key);
+const client = algoliasearch('3FV03HFFIZ', algolia.key);
 const langs = {
-  'zh-CN': 'var-zh',
-  'en-US': 'var-en'
+  'zh-CN': 'albatro-zh',
+  'en-US': 'albatro-en'
 };
 
-['zh-CN', 'en-US'].forEach(lang => {
+['zh-CN'].forEach(lang => {
   const indexName = langs[lang];
   const index = client.initIndex(indexName);
   index.clearIndex(err => {

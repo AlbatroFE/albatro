@@ -159,8 +159,8 @@
 
     methods: {
       initIndex() {
-        const client = algoliasearch('4C63BTGP6S', '0729c3c7f4dc8db7395ad0b19c0748d2');
-        this.index = client.initIndex(`element-${ this.lang ? this.langs[this.lang].index : 'zh' }`);
+        const client = algoliasearch('3FV03HFFIZ', '35e07584e3ddc12a8c160e89716a3332');
+        this.index = client.initIndex(`albatro-${ this.lang ? this.langs[this.lang].index : 'zh' }`);
       },
 
       querySearch(query, cb) {
