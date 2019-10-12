@@ -13,7 +13,7 @@ try {
     throw error
 }
 
-const client = algoliasearch('3FV03HFFIZ', algolia.key);
+const client = algoliasearch('ETIZ1RBJ6V', algolia.key);
 const langs = {
   'zh-CN': 'albatro-zh',
   'en-US': 'albatro-en'

@@ -159,7 +159,7 @@
 
     methods: {
       initIndex() {
-        const client = algoliasearch('3FV03HFFIZ', '35e07584e3ddc12a8c160e89716a3332');
+        const client = algoliasearch('ETIZ1RBJ6V', 'c140d23cd1339370f0d0e65b98c14f30');
         this.index = client.initIndex(`albatro-${ this.lang ? this.langs[this.lang].index : 'zh' }`);
       },
 
