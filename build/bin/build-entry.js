@@ -42,7 +42,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '{{version}}',
+  version: "{{version}}",
   locale: locale.use,
   i18n: locale.i18n,
   install,
