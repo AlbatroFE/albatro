@@ -49,7 +49,7 @@ const install = function(vue: any, opts: any = {}) {
 };
 
 export default {
-  version: "0.2.0",
+  version: "0.2.1",
   locale: locale.use,
   i18n: locale.i18n,
   install,
