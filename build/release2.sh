@@ -35,6 +35,7 @@ then
 
   # publish
   git push origin master
+  git tag -a v$VERSION -m "[release] $VERSION"
   git push origin refs/tags/v$VERSION
   git checkout dev
   git rebase master
