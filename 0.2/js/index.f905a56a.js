@@ -7208,12 +7208,12 @@ var headervue_type_template_id_44a67e19_scoped_true_staticRenderFns = []
 
 // CONCATENATED MODULE: ./examples/components/header.vue?vue&type=template&id=44a67e19&scoped=true&
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1ae12628-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./examples/components/search.vue?vue&type=template&id=061f2c4c&
-var searchvue_type_template_id_061f2c4c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-autocomplete',{attrs:{"size":"small","popper-class":("algolia-search" + (_vm.isEmpty ? ' is-empty' : '')),"fetch-suggestions":_vm.querySearch,"placeholder":_vm.placeholder,"trigger-on-focus":false,"highlight-first-item":""},on:{"select":_vm.handleSelect},scopedSlots:_vm._u([{key:"default",fn:function(props){return [(props.item.title)?_c('p',{staticClass:"algolia-search-title"},[_c('span',{domProps:{"innerHTML":_vm._s(props.item.highlightedCompo)}}),_c('span',{staticClass:"algolia-search-separator"}),_c('span',{domProps:{"innerHTML":_vm._s(props.item.title)}})]):_vm._e(),(props.item.content)?_c('p',{staticClass:"algolia-search-content",domProps:{"innerHTML":_vm._s(props.item.content)}}):_vm._e(),(props.item.img)?_c('a',{staticClass:"algolia-search-link",attrs:{"target":"_blank","href":"https://www.algolia.com/docsearch"}},[_c('img',{staticClass:"algolia-search-logo",attrs:{"src":__webpack_require__("6609"),"alt":"algolia-logo"}})]):_vm._e(),(props.item.isEmpty)?_c('p',{staticClass:"algolia-search-empty"},[_vm._v(_vm._s(_vm.emptyText))]):_vm._e()]}}]),model:{value:(_vm.query),callback:function ($$v) {_vm.query=$$v},expression:"query"}})}
-var searchvue_type_template_id_061f2c4c_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1ae12628-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./examples/components/search.vue?vue&type=template&id=8dc5bb30&
+var searchvue_type_template_id_8dc5bb30_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-autocomplete',{attrs:{"size":"small","popper-class":("algolia-search" + (_vm.isEmpty ? ' is-empty' : '')),"fetch-suggestions":_vm.querySearch,"placeholder":_vm.placeholder,"trigger-on-focus":false,"highlight-first-item":""},on:{"select":_vm.handleSelect},scopedSlots:_vm._u([{key:"default",fn:function(props){return [(props.item.title)?_c('p',{staticClass:"algolia-search-title"},[_c('span',{domProps:{"innerHTML":_vm._s(props.item.highlightedCompo)}}),_c('span',{staticClass:"algolia-search-separator"}),_c('span',{domProps:{"innerHTML":_vm._s(props.item.title)}})]):_vm._e(),(props.item.content)?_c('p',{staticClass:"algolia-search-content",domProps:{"innerHTML":_vm._s(props.item.content)}}):_vm._e(),(props.item.img)?_c('a',{staticClass:"algolia-search-link",attrs:{"target":"_blank","href":"https://www.algolia.com/docsearch"}},[_c('img',{staticClass:"algolia-search-logo",attrs:{"src":__webpack_require__("6609"),"alt":"algolia-logo"}})]):_vm._e(),(props.item.isEmpty)?_c('p',{staticClass:"algolia-search-empty"},[_vm._v(_vm._s(_vm.emptyText))]):_vm._e()]}}]),model:{value:(_vm.query),callback:function ($$v) {_vm.query=$$v},expression:"query"}})}
+var searchvue_type_template_id_8dc5bb30_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./examples/components/search.vue?vue&type=template&id=061f2c4c&
+// CONCATENATED MODULE: ./examples/components/search.vue?vue&type=template&id=8dc5bb30&
 
 // EXTERNAL MODULE: external "algoliasearch"
 var external_algoliasearch_ = __webpack_require__("88eb");
@@ -7381,7 +7381,7 @@ var external_algoliasearch_default = /*#__PURE__*/__webpack_require__.n(external
 
   methods: {
     initIndex() {
-      const client = external_algoliasearch_default()('3FV03HFFIZ', '35e07584e3ddc12a8c160e89716a3332');
+      const client = external_algoliasearch_default()('ETIZ1RBJ6V', 'c140d23cd1339370f0d0e65b98c14f30');
       this.index = client.initIndex(`albatro-${ this.lang ? this.langs[this.lang].index : 'zh' }`);
     },
 
@@ -7448,8 +7448,8 @@ var searchvue_type_style_index_0_lang_scss_ = __webpack_require__("f0ba");
 
 var search_component = Object(componentNormalizer["a" /* default */])(
   components_searchvue_type_script_lang_js_,
-  searchvue_type_template_id_061f2c4c_render,
-  searchvue_type_template_id_061f2c4c_staticRenderFns,
+  searchvue_type_template_id_8dc5bb30_render,
+  searchvue_type_template_id_8dc5bb30_staticRenderFns,
   false,
   null,
   null,
