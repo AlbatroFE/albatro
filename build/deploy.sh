@@ -1,4 +1,5 @@
 #! /bin/sh
+git checkout master
 mkdir temp_web
 #npm run deploy:build
 cd temp_web
